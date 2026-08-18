@@ -1,0 +1,26 @@
+- assetId: ui.system-font-stack
+  usageLocations:
+    - apps/web/src/styles.css
+  source: Operating-system supplied UI fonts
+  permissionBasis: system-provided-no-redistribution
+  attribution: null
+  copyrightNotice: null
+  substituteFor: Protected DelawareScene typography
+  included: true
+- assetId: ui.css-decoration
+  usageLocations:
+    - apps/web/src/styles.css
+  source: Independently created for this implementation
+  permissionBasis: original-project-work
+  attribution: null
+  copyrightNotice: null
+  substituteFor: Protected logos, photographs, and decorative assets
+  included: true
+- assetId: delawarescene.protected-assets
+  usageLocations: []
+  source: Public Benchmark
+  permissionBasis: none
+  attribution: null
+  copyrightNotice: null
+  substituteFor: null
+  included: false

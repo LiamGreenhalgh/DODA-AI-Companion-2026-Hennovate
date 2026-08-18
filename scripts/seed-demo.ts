@@ -1,0 +1,192 @@
+import { join } from 'node:path';
+import { JsonEventRepository, JsonStateStore } from '../packages/database/src/index.js';
+import {
+  normalizeEvent,
+  type EventRecord,
+  type RawEventCandidate,
+} from '../packages/domain/src/index.js';
+
+const retrievedAt = '2026-08-18T12:00:00Z';
+const candidates: RawEventCandidate[] = [
+  {
+    id: '11111111-1111-4111-8111-111111111111',
+    sourceRecordId: 'demo-source-art',
+    sourceCategory: 'ddoa-grantee',
+    sourceUrl: 'https://example.org/delaware-art-day',
+    sourceSuppliedId: 'demo-art-1',
+    retrievedAt,
+    title: 'Delaware Art Day',
+    description: 'Meet Delaware artists and explore independently created demonstrations and exhibitions.',
+    categories: ['Visual Arts'],
+    organization: 'First State Arts Collective',
+    venue: 'The Community Gallery',
+    city: 'Dover',
+    region: 'Central Delaware',
+    cost: 'Free',
+    audience: 'All ages',
+    accessibility: 'Wheelchair accessible',
+    address: { street: '100 Example Avenue', city: 'Dover', state: 'DE', postalCode: '19901' },
+    coordinates: { latitude: 39.1582, longitude: -75.5244 },
+    publicSourceUrl: 'https://example.org/delaware-art-day',
+    attribution: 'Independent demonstration data',
+    occurrences: [{ id: 'occ-art-1', start: '2027-01-16' }],
+  },
+  {
+    id: '22222222-2222-4222-8222-222222222222',
+    sourceRecordId: 'demo-source-music',
+    sourceCategory: 'non-grantee',
+    sourceUrl: 'https://example.org/riverfront-jazz',
+    sourceSuppliedId: 'demo-music-1',
+    retrievedAt,
+    title: 'Riverfront Jazz Evening',
+    description: 'An evening program featuring regional jazz performers.',
+    categories: ['Music'],
+    organization: 'Wilmington Community Music Project',
+    venue: 'Riverfront Performance Hall',
+    city: 'Wilmington',
+    region: 'Northern Delaware',
+    cost: '$20',
+    audience: 'Adults and teens',
+    accessibility: 'Assistive listening available',
+    publicSourceUrl: 'https://example.org/riverfront-jazz',
+    ticketUrl: 'https://example.org/riverfront-jazz/tickets',
+    occurrences: [
+      {
+        id: 'occ-music-1',
+        start: '2027-02-20T19:30:00-05:00',
+        end: '2027-02-20T21:30:00-05:00',
+        sourceTimezone: 'America/New_York',
+      },
+    ],
+  },
+  {
+    id: '33333333-3333-4333-8333-333333333333',
+    sourceRecordId: 'demo-source-theatre',
+    sourceCategory: 'ddoa-grantee',
+    sourceUrl: 'https://example.org/coastal-stage',
+    retrievedAt,
+    title: 'Coastal Stage: New Delaware Voices',
+    description: 'A staged reading of new work by local playwrights.',
+    categories: ['Theatre'],
+    organization: 'Coastal Stage Ensemble',
+    venue: 'Seaside Studio',
+    city: 'Rehoboth Beach',
+    region: 'Southern Delaware',
+    cost: 'Pay what you can',
+    audience: 'Adults and teens',
+    accessibility: 'Step-free entrance',
+    registrationUrl: 'https://example.org/coastal-stage/register',
+    occurrences: [
+      {
+        id: 'occ-theatre-1',
+        start: '2027-03-12T18:00:00-05:00',
+        end: '2027-03-12T20:00:00-05:00',
+        sourceTimezone: 'America/New_York',
+      },
+      {
+        id: 'occ-theatre-2',
+        start: '2027-03-13T14:00:00-05:00',
+        end: '2027-03-13T16:00:00-05:00',
+        sourceTimezone: 'America/New_York',
+      },
+    ],
+  },
+  {
+    id: '44444444-4444-4444-8444-444444444444',
+    sourceRecordId: 'demo-source-history',
+    sourceCategory: 'government',
+    sourceUrl: 'https://example.org/history-workshop',
+    retrievedAt,
+    title: 'Hands-on Delaware History Workshop',
+    description: 'A family workshop using replica objects to explore Delaware history.',
+    categories: ['History'],
+    organization: 'Delaware Heritage Demonstration Program',
+    venue: 'Old Town Learning Center',
+    city: 'New Castle',
+    region: 'Northern Delaware',
+    cost: 'Free',
+    audience: 'Families',
+    accessibility: 'Wheelchair accessible',
+    occurrences: [{ id: 'occ-history-1', start: '2027-04-10' }],
+  },
+  {
+    id: '55555555-5555-4555-8555-555555555555',
+    sourceRecordId: 'demo-source-dance',
+    sourceCategory: 'ddoa-grantee',
+    sourceUrl: 'https://example.org/spring-dance',
+    retrievedAt,
+    title: 'Spring Dance Showcase',
+    description: 'Student and community companies share short works in multiple dance styles.',
+    categories: ['Dance'],
+    organization: 'Newark Movement Lab',
+    venue: 'Main Street Arts Center',
+    city: 'Newark',
+    region: 'Northern Delaware',
+    cost: '$12',
+    audience: 'All ages',
+    accessibility: 'Wheelchair accessible',
+    occurrences: [
+      {
+        id: 'occ-dance-1',
+        start: '2027-05-08T15:00:00-04:00',
+        end: '2027-05-08T17:00:00-04:00',
+        sourceTimezone: 'America/New_York',
+      },
+    ],
+  },
+  {
+    id: '66666666-6666-4666-8666-666666666666',
+    sourceRecordId: 'demo-source-literary',
+    sourceCategory: 'library',
+    sourceUrl: 'https://example.org/poetry-open-mic',
+    retrievedAt,
+    title: 'Poetry Open Mic',
+    description: 'A welcoming reading for Delaware poets and listeners.',
+    categories: ['Literary Arts'],
+    organization: 'Sussex County Reading Circle',
+    venue: 'Community Reading Room',
+    city: 'Georgetown',
+    region: 'Southern Delaware',
+    cost: 'Free',
+    audience: 'Adults and teens',
+    accessibility: 'Step-free entrance',
+    occurrences: [
+      {
+        id: 'occ-poetry-1',
+        start: '2027-06-17T18:30:00-04:00',
+        end: '2027-06-17T20:00:00-04:00',
+        sourceTimezone: 'America/New_York',
+      },
+    ],
+  },
+  {
+    id: '77777777-7777-4777-8777-777777777777',
+    sourceRecordId: 'demo-source-pending',
+    sourceCategory: 'non-grantee',
+    sourceUrl: 'https://example.org/pending-event',
+    retrievedAt,
+    title: 'Pending Community Performance',
+    description: 'This fixture is visible only in moderation until approved.',
+    categories: ['Performance'],
+    organization: 'Demo Presenter',
+    venue: 'Demo Hall',
+    city: 'Milford',
+    region: 'Central Delaware',
+    cost: 'Free',
+    audience: 'All ages',
+    occurrences: [{ id: 'occ-pending-1', start: '2027-07-22' }],
+  },
+];
+
+const events: EventRecord[] = candidates.map((candidate, index) => {
+  const normalized = normalizeEvent(candidate);
+  if (!normalized.ok) {
+    throw new Error(`Demo event ${candidate.id} is invalid: ${JSON.stringify(normalized.errors)}`);
+  }
+  return { ...normalized.value, publicationStatus: index === candidates.length - 1 ? 'pending' : 'published' };
+});
+
+const store = new JsonStateStore(join(process.cwd(), 'data', 'generated', 'state.json'));
+const repository = new JsonEventRepository(store);
+await repository.replaceAll(events);
+console.log(`Seeded ${events.length} deterministic local events (${events.filter((event) => event.publicationStatus === 'published').length} published).`);

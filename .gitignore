@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.types/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.local/
+certs/
+infra/cdk/cdk.out/
+data/generated/*.tmp
+.DS_Store
+Thumbs.db

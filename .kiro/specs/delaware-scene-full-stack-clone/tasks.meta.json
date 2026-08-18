@@ -1,0 +1,45 @@
+{
+  "pbtResults": {
+    "3.5 Write the property test for authoritative catalog mapping": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072594565
+    },
+    "3.6 Write the property test for URL-field normalization": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072598608
+    },
+    "3.7 Write the property test for atomic invalid-catalog rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072603780
+    },
+    "3.8 Write the property test for canonical catalog round trips": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072608202
+    },
+    "5.5 Write the property test for event text normalization": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072612317
+    },
+    "5.6 Write the property test for occurrence parsing": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072614518
+    },
+    "5.7 Write the property test for invalid end ordering": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072618727
+    },
+    "5.8 Write the property test for deduplication and provenance union": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072625880
+    },
+    "5.9 Write the property test for exact-once same-identity updates": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072641856
+    },
+    "5.10 Write the property test for retention boundaries": {
+      "status": "passed",
+      "lastRunTimestamp": 1787072644997
+    }
+  },
+  "executionHistory": {}
+}

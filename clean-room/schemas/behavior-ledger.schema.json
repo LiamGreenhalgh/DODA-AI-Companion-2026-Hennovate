@@ -1,0 +1,26 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["behaviorId", "observableBehavior", "implementationStatus", "basis", "compatibility", "inaccessibleDependencies", "observableDifferences", "evidence"],
+    "properties": {
+      "behaviorId": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$" },
+      "observableBehavior": { "type": "string", "minLength": 1 },
+      "implementationStatus": { "enum": ["not-started", "in-progress", "blocked", "deferred", "complete"] },
+      "basis": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "reference"],
+        "properties": {
+          "kind": { "enum": ["requirement", "catalog", "public-benchmark", "independent"] },
+          "reference": { "type": "string", "minLength": 1 }
+        }
+      },
+      "compatibility": { "enum": ["reproduced", "independently-approximated", "unsupported"] },
+      "inaccessibleDependencies": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "observableDifferences": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+    }
+  }
+}

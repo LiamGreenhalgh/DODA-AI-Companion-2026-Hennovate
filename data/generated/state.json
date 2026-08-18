@@ -1,0 +1,2857 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "canonicalIdentity": "a8f48cea0ce128ac730e4e4bb83aaac574a9f49e17f8d0a548ac7ecab9647503",
+      "identityVersion": 1,
+      "title": "Delaware Art Day",
+      "description": "Meet Delaware artists and explore independently created demonstrations and exhibitions.",
+      "categories": [
+        "Visual Arts"
+      ],
+      "organization": "First State Arts Collective",
+      "venue": "The Community Gallery",
+      "city": "Dover",
+      "region": "Central Delaware",
+      "cost": "Free",
+      "audience": "All ages",
+      "accessibility": "Wheelchair accessible",
+      "address": {
+        "street": "100 Example Avenue",
+        "city": "Dover",
+        "state": "DE",
+        "postalCode": "19901"
+      },
+      "coordinates": {
+        "latitude": 39.1582,
+        "longitude": -75.5244
+      },
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://example.org/delaware-art-day",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": "Independent demonstration data",
+      "rightsNotice": null,
+      "sourceCategory": "ddoa-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-art-1",
+          "kind": "date",
+          "startDate": "2027-01-16",
+          "endDate": null,
+          "originalStart": "2027-01-16",
+          "originalEnd": null
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-art",
+          "sourceUrl": "https://example.org/delaware-art-day",
+          "sourceSuppliedId": "demo-art-1",
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "22222222-2222-4222-8222-222222222222",
+      "canonicalIdentity": "96a44c264c51373c7f220bcdaa7d75a387d496d29614c5938db695c10f331e3e",
+      "identityVersion": 1,
+      "title": "Riverfront Jazz Evening",
+      "description": "An evening program featuring regional jazz performers.",
+      "categories": [
+        "Music"
+      ],
+      "organization": "Wilmington Community Music Project",
+      "venue": "Riverfront Performance Hall",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": "$20",
+      "audience": "Adults and teens",
+      "accessibility": "Assistive listening available",
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://example.org/riverfront-jazz",
+      "ticketUrl": "https://example.org/riverfront-jazz/tickets",
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-music-1",
+          "kind": "instant",
+          "startAt": "2027-02-21T00:30:00Z",
+          "endAt": "2027-02-21T02:30:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2027-02-20",
+          "localTime": "19:30:00",
+          "originalStart": "2027-02-20T19:30:00-05:00",
+          "originalEnd": "2027-02-20T21:30:00-05:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-music",
+          "sourceUrl": "https://example.org/riverfront-jazz",
+          "sourceSuppliedId": "demo-music-1",
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "canonicalIdentity": "27e4e0bcd7fae84b88246a929a5060248676e586dba027e2801929af9b7a1a4e",
+      "identityVersion": 1,
+      "title": "Coastal Stage: New Delaware Voices",
+      "description": "A staged reading of new work by local playwrights.",
+      "categories": [
+        "Theatre"
+      ],
+      "organization": "Coastal Stage Ensemble",
+      "venue": "Seaside Studio",
+      "city": "Rehoboth Beach",
+      "region": "Southern Delaware",
+      "cost": "Pay what you can",
+      "audience": "Adults and teens",
+      "accessibility": "Step-free entrance",
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": null,
+      "ticketUrl": null,
+      "registrationUrl": "https://example.org/coastal-stage/register",
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "ddoa-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-theatre-1",
+          "kind": "instant",
+          "startAt": "2027-03-12T23:00:00Z",
+          "endAt": "2027-03-13T01:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2027-03-12",
+          "localTime": "18:00:00",
+          "originalStart": "2027-03-12T18:00:00-05:00",
+          "originalEnd": "2027-03-12T20:00:00-05:00"
+        },
+        {
+          "id": "occ-theatre-2",
+          "kind": "instant",
+          "startAt": "2027-03-13T19:00:00Z",
+          "endAt": "2027-03-13T21:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2027-03-13",
+          "localTime": "14:00:00",
+          "originalStart": "2027-03-13T14:00:00-05:00",
+          "originalEnd": "2027-03-13T16:00:00-05:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-theatre",
+          "sourceUrl": "https://example.org/coastal-stage",
+          "sourceSuppliedId": null,
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "44444444-4444-4444-8444-444444444444",
+      "canonicalIdentity": "81f628e38095f64f2b2cf7fee14f72afa617364dc5adbc05c44527315756e076",
+      "identityVersion": 1,
+      "title": "Hands-on Delaware History Workshop",
+      "description": "A family workshop using replica objects to explore Delaware history.",
+      "categories": [
+        "History"
+      ],
+      "organization": "Delaware Heritage Demonstration Program",
+      "venue": "Old Town Learning Center",
+      "city": "New Castle",
+      "region": "Northern Delaware",
+      "cost": "Free",
+      "audience": "Families",
+      "accessibility": "Wheelchair accessible",
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": null,
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "government",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-history-1",
+          "kind": "date",
+          "startDate": "2027-04-10",
+          "endDate": null,
+          "originalStart": "2027-04-10",
+          "originalEnd": null
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-history",
+          "sourceUrl": "https://example.org/history-workshop",
+          "sourceSuppliedId": null,
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "canonicalIdentity": "9fc4c5f9f4ab656e2efc3dda3025cd673a0bb9a64056e5217c191e9a0e68fea6",
+      "identityVersion": 1,
+      "title": "Spring Dance Showcase",
+      "description": "Student and community companies share short works in multiple dance styles.",
+      "categories": [
+        "Dance"
+      ],
+      "organization": "Newark Movement Lab",
+      "venue": "Main Street Arts Center",
+      "city": "Newark",
+      "region": "Northern Delaware",
+      "cost": "$12",
+      "audience": "All ages",
+      "accessibility": "Wheelchair accessible",
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": null,
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "ddoa-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-dance-1",
+          "kind": "instant",
+          "startAt": "2027-05-08T19:00:00Z",
+          "endAt": "2027-05-08T21:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2027-05-08",
+          "localTime": "15:00:00",
+          "originalStart": "2027-05-08T15:00:00-04:00",
+          "originalEnd": "2027-05-08T17:00:00-04:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-dance",
+          "sourceUrl": "https://example.org/spring-dance",
+          "sourceSuppliedId": null,
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "66666666-6666-4666-8666-666666666666",
+      "canonicalIdentity": "38718d5d263625e8bbe860f4261824736f9634a4c869ef114e9994c98c25323a",
+      "identityVersion": 1,
+      "title": "Poetry Open Mic",
+      "description": "A welcoming reading for Delaware poets and listeners.",
+      "categories": [
+        "Literary Arts"
+      ],
+      "organization": "Sussex County Reading Circle",
+      "venue": "Community Reading Room",
+      "city": "Georgetown",
+      "region": "Southern Delaware",
+      "cost": "Free",
+      "audience": "Adults and teens",
+      "accessibility": "Step-free entrance",
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": null,
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "library",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "occ-poetry-1",
+          "kind": "instant",
+          "startAt": "2027-06-17T22:30:00Z",
+          "endAt": "2027-06-18T00:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2027-06-17",
+          "localTime": "18:30:00",
+          "originalStart": "2027-06-17T18:30:00-04:00",
+          "originalEnd": "2027-06-17T20:00:00-04:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-literary",
+          "sourceUrl": "https://example.org/poetry-open-mic",
+          "sourceSuppliedId": null,
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "77777777-7777-4777-8777-777777777777",
+      "canonicalIdentity": "ba20b69e555678c0eee9b099076829d056855987a0e5896270a430699cddb372",
+      "identityVersion": 1,
+      "title": "Pending Community Performance",
+      "description": "This fixture is visible only in moderation until approved.",
+      "categories": [
+        "Performance"
+      ],
+      "organization": "Demo Presenter",
+      "venue": "Demo Hall",
+      "city": "Milford",
+      "region": "Central Delaware",
+      "cost": "Free",
+      "audience": "All ages",
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": null,
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "pending",
+      "occurrences": [
+        {
+          "id": "occ-pending-1",
+          "kind": "date",
+          "startDate": "2027-07-22",
+          "endDate": null,
+          "originalStart": "2027-07-22",
+          "originalEnd": null
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "demo-source-pending",
+          "sourceUrl": "https://example.org/pending-event",
+          "sourceSuppliedId": null,
+          "retrievedAt": "2026-08-18T12:00:00Z"
+        }
+      ],
+      "version": 1
+    }
+  ],
+  "sources": [
+    {
+      "id": "45d805db-af19-5ad6-b515-d8bb6d6b99c6",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 2,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "4youth Productions",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.fouryouth.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://fouryouth.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "known-absence"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "a3726416-26a1-5659-9d60-4529df6ce893",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 3,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Art Works for All",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.artworksforall.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "known-absence"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "019a817e-1bd2-5788-b462-eeb79c0ef62a",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 4,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Biggs Museum of American Art",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thebiggsmuseum.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thebiggsmuseum.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thebiggsmuseum.org/wp-sitemap-posts-tribe_events-1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "2a8c5445-db07-5f45-9fe2-80b6df909dbc",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 5,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Brandywine Baroque",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.brandywinebaroque.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.brandywinebaroque.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.brandywinebaroque.org/concert-season"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "d29828c0-6906-593b-a5b7-506d3219186d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 6,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Candlelight Theatre",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://candlelighttheatredelaware.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://candlelighttheatredelaware.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://candlelighttheatredelaware.org/wp-sitemap-posts-mec-events-1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "7724caec-7d62-59f2-bac4-3b50800f43bc",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 7,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Capital Ringers, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.capitalringers.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.capitalringers.org/sitemap_index.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.capitalringers.org/event_category-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "5e9a36d4-faf0-5656-97e4-ec81498310a8",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 8,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Center for the Creative Arts, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.ccarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.ccarts.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.ccarts.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "74dbbd70-7ab0-5d27-881a-f17e6525a6b0",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 9,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Chapel Street Players",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.chapelstreetplayers.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://chapelstreetplayers.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://chapelstreetplayers.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "01798fed-1f0d-5862-8e0f-b3377e5c0204",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 10,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Christina Cultural Arts Center",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.ccacde.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://ccacde.org/sitemap-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://ccacde.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "5832c610-0632-5ef2-906d-6477d16e6bb9",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 11,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "City Theater Company",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.city-theater.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.city-theater.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.city-theater.org/event-pages-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6f171ded-507e-577d-ba22-9944026a86bc",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 12,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Clear Space Theatre Company",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.clearspacetheatre.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.clearspacetheatre.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.clearspacetheatre.org/upcomingshows"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "d727db82-3e77-5b41-ba8f-5f5f775ddc18",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 13,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Coastal Concerts, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.coastalconcerts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.coastalconcerts.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.coastalconcerts.org/coastal-concerts-season"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "36e9d93e-7a7e-5fe9-97de-2a6c29052e74",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 14,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "CoroAllegro, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.coroallegro.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.coroallegro.com/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.coroallegro.com/performances"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "aa48a8db-30f4-597d-b91b-c129f30209c8",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 15,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Culture Restoration Project, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.crpde.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.crpde.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.crpde.org/events-calendar"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "baf26539-32a5-50d0-ad7d-aa76f6bcf63d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 16,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Academy of Vocal Arts",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.elevatevocalarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.elevatevocalarts.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://elevatevocalarts.org/concerts-and-events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "b3a015e9-c874-5b20-be78-215ef12e8c26",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 17,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Art Museum",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delart.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delart.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delart.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "602ff5d9-7e2c-58a1-9203-e1bd4f177471",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 18,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Celebration of Jazz Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothjazz.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "known-absence"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "f8cf1581-0d37-51a3-b66a-af695be21822",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 19,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Children's Theatre Ltd.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.dechildrenstheatre.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.dechildrenstheatre.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.dechildrenstheatre.org/news"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "e7a3d423-7e11-518d-833e-3ba1019e61fe",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 20,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Choral Arts Association",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://delawarechoralarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarechoralarts.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarechoralarts.org/wp-sitemap-posts-event-1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "192aca41-744c-52dd-b3e8-55fd1018565e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 21,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Choral Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawarechoralsociety.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawarechoralsociety.org/tickets/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "da01d4c1-5aa7-5b4e-8e28-c95072cf699d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 22,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Dance Company",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaredancecompany.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaredancecompany.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaredancecompany.org/ddc-calendar"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "7c0570c5-61cf-5612-8019-ea53c20062db",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 23,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Institute for the Arts in Education",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://diae.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://diae.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://diae.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "4852fe58-7249-5987-9529-a7f84052b7a2",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 24,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Photographic Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawarephotographicsociety.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "known-absence"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawarephotographicsociety.org/club/clubschedules.aspx"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "fa899e65-3bbf-5e1b-a9e1-bd74d5f6a34a",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 25,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Shakespeare Festival, Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delshakes.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delshakes.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delshakes.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6cd1337e-1b47-5a73-8494-2ce073ca0482",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 26,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Symphony Association",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaresymphony.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaresymphony.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaresymphony.org/wp-sitemap-posts-dso_events-1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "c772d3fd-aee7-53c7-bd46-bceb0da6ea7e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 27,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Delaware Theatre Company",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaretheatre.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaretheatre.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaretheatre.org/25-26-season"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "d94a4bd1-1912-51ad-9314-4b3db9c3f1af",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 28,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Developing Artist Collaboration Incorporated",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.developingarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.developingarts.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.developingarts.org/calendar"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "f903adb9-3d7c-5dd4-8198-37f49ec658e2",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 29,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Everett Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://theeverett.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://theeverett.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://theeverett.org/all-event-tickets"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "3f45cc47-e69a-59a3-b1b8-1e363d1c91f0",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 30,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "First State Ballet Theatre, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.firststateballet.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.firststateballet.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.firststateballet.org/school-pages"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "1cb89b4f-3938-5cdc-9548-d74a7c9b9c1b",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 31,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Grand Opera House Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thegrandwilmington.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "known-absence"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://tickets.thegrandwilmington.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "627f3de8-056d-517b-bbb3-855dbe89dae0",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 32,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Inner City Cultural League",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.icclarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.icclarts.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.icclarts.org/calendar"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "07f02cba-9635-5bf2-b27b-8060afd110e8",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 33,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Jester Artspace, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.jesterartspace.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.jesterartspace.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.jesterartspace.org/wp-sitemap-posts-calendar-1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "ab05ca47-9e4f-5fe5-b6ab-95e46ce71d55",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 34,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Joshua M. Freeman Foundation",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.freemanarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.freemanarts.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.freemanarts.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "4327b300-d6cb-5ff6-8212-3341d1c8d419",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 35,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Kent County Theatre Guild, Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.kctg.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.kctg.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.kctg.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6fa0a2d0-1bc5-5255-b8c5-01c3c19c182d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 36,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Market Street Music Corporation",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://marketstreetmusicde.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://marketstreetmusicde.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://marketstreetmusicde.org/past-concerts",
+          "https://marketstreetmusicde.org/concerts"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "fc7aec49-e129-5c67-9df7-30da72d2e4df",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 37,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Milford Community Band",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://milfordcommunityband.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "http://milfordcommunityband.org/sitemap.website.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "http://milfordcommunityband.org/all-events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "58a512fb-4fab-5cb7-819a-74368f154676",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 38,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Milton Arts Guild",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.miltonartsguild.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://miltonartsguild.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://miltonartsguild.org/calendar/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "46fcff83-0739-51b6-a9eb-06974cde1df6",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 39,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Mispillion Art League Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://mispillionarts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "known-absence"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://mispillionarts.org/events-2/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "9de41020-ea88-5cd6-86a1-eb39a1cc9e7d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 40,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "New Light Theatre Company",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newlighttheatre.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newlighttheatre.com/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newlighttheatre.com/past-productions",
+          "https://www.newlighttheatre.com/spelling-bee"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "3f7b109f-19fa-5a06-a6d3-36d494024b26",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 41,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Newark Arts Alliance, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newarkartsalliance.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newarkartsalliance.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.newarkartsalliance.org/upcoming-events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "1eea6ffe-5971-5455-b4f6-649a073d0e9e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 42,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Newark Symphony Orchestra",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://newarksymphony.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://newarksymphony.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://newarksymphony.org/event-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "2ee37c1a-5523-5d94-842c-a2a506bbb1b7",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 43,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "OperaDelaware",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.operade.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.operade.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://operade.app.getcuebox.com/o/ZVM24G8G/shows"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "4e00672e-e115-5249-aa1b-cd2278bc1f6e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 44,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Pieces of a Dream, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.piecesofadream.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.piecesofadream.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.piecesofadream.org/tickets--events.html"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "2178f821-d71e-550b-9fb1-b16b50f97998",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 45,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Possum Point Players",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://possumpointplayers.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://possumpointplayers.org/sitemap.website.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://possumpointplayers.org/calendar-1"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "1304adb5-d377-598c-af4c-6a37db89830a",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 46,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Reed's Refuge, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.reedsrefugecenter.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://reedsrefugecenter.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://reedsrefugecenter.org/events_/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "e3b2a989-8998-50c3-82e8-97bac2cdad0e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 47,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Rehoboth Art League",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothartleague.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothartleague.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothartleague.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6b0b2a05-26c9-5b38-8549-d7b2b01a2fee",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 48,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Rehoboth Beach Film Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothfilm.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothfilm.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothfilm.org/CAT-this-week-cinema-art-theater-now-playing"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "524683dc-8fb2-5fd0-8958-d3ae03e6549b",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 49,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Rehoboth Concert Band, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothconcertband.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothconcertband.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothconcertband.org/index.html"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "253395fa-5ffc-579d-bd9d-81721da135e6",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 50,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Rehoboth Summer Children's Theatre",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothchildrenstheatre.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothchildrenstheatre.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.rehobothchildrenstheatre.org/shows--schedule.html"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "aa51dbf0-62d4-599d-b74e-997601ef2b9d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 51,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Seaford Community Concert Association, inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.seafordconcerts.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://seafordconcerts.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://seafordconcerts.org/concerts/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "2bb0f2b0-fc47-5aa4-b2c5-7c936ec0a9a5",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 52,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Second Street Players",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.secondstreetplayers.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "known-absence"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.secondstreetplayers.com/Archive_20-29.html",
+          "https://milford.booktix.com/",
+          "http://www.secondstreetplayers.com/SSP-Main-Stage-2026.html"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "eea22dfc-367b-545e-9e68-d25f84725542",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 53,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Smyrna Clayton Heritage Association",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.smyrnaoperahouse.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://smyrnaoperahouse.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://smyrnaoperahouse.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "ac4e9f21-c793-5dc9-8b7e-27ee72574eeb",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 54,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Southern Delaware Chorale",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://southerndelawarechorale.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://southerndelawarechorale.org/sitemap.website.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://southerndelawarechorale.org/2025-2026-season"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "5a50b4ff-1fcb-56a6-9ee4-b1e542584d4a",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 55,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Southern Delaware Orchestra",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.sodelomusic.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.sodelomusic.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.sodelomusic.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "20d26e97-364b-5504-a232-4b76c65d0911",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 56,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Brandywiners Ltd",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://www.brandywiners.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://brandywiners.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://brandywiners.org/calendar/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "08b71db5-845a-59a5-a106-7a17dd2f5c67",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 57,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Children's Theatre, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thechildrenstheatreinc.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thechildrenstheatreinc.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thechildrenstheatreinc.org/shows"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "9009afd8-290f-563a-85f5-afa92a0f1b8d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 58,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Choir School of Delaware, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.choirschoolofdelaware.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.choirschoolofdelaware.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.choirschoolofdelaware.org/upcoming-events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "9d0bdbbc-db41-59aa-bb32-e4ccb6c91b4f",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 59,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Delaware Contemporary",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "http://decontemporary.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://decontemporary.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.decontemporary.org/upcoming"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "351c15f8-7f9d-5349-a102-af35ab2f2c74",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 60,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Dover Art League, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thedoverartleague.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thedoverartleague.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.thedoverartleague.com/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "5987d719-c990-590d-8264-662e56d31624",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 61,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Henry Francis du Pont Winterthur Museum, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.winterthur.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.winterthur.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.winterthur.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "1409942d-d6dd-5125-9140-1d1facf0a00d",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 62,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Music School of Delaware, Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.musicschoolofdelaware.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.musicschoolofdelaware.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.musicschoolofdelaware.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "e38ec549-3fb8-5a59-842b-b0b4285316f7",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 63,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "The Rainbow Chorale of Delaware",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://therainbowchorale.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://therainbowchorale.org/past-performances",
+          "https://events.ticketleap.com/events/therainbowchorale"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "bcaaede5-60fc-5bc7-ae6f-9cf216c3f02e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 64,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Theatre N Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://theatren.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://theatren.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://theatren.com/coming-soon"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "fbd36cb8-8f85-5638-8bde-bfe65397bd6e",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 65,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Wilmington Ballet Academy of the Dance Inc",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonballet.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonballet.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonballet.org/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "c1ccfd8f-6dc0-582e-9b43-ae8e7722efa3",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 66,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Wilmington Children's Chorus",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonchildrenschorus.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonchildrenschorus.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonchildrenschorus.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6449140b-4dfa-5a92-8a78-8669472a1938",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 67,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Wilmington Concert Opera, Inc.",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonconcertopera.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonconcertopera.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtonconcertopera.com/events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "020f257d-9b85-53e1-87e3-85e45f15ba1f",
+      "catalogFileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "physicalRow": 68,
+      "sourceCategory": "ddoa-grantee",
+      "organizationName": "Wilmington Drama League",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtondramaleague.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtondramaleague.org/pages-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.wilmingtondramaleague.org/2026-2027-season"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "0a587284-ff29-5b3d-b1cf-88e88f718136",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 2,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Air Mobility Command Museum",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.amcmuseum.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.amcmuseum.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.amcmuseum.org/events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "034f3495-9101-5a13-82c8-f79624797dcc",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 3,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Bootless Stageworks",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.bootless.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.bootless.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.bootless.org/tc_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "f99b1f00-4a6a-588d-a3b3-9b0d1c62892b",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 4,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Agricultural Museum & Village",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://agriculturalmuseum.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://agriculturalmuseum.org/wp-sitemap-posts-page-1.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://agriculturalmuseum.org/museum-events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "a8d0ca58-dfdd-54ed-b42b-63f4b7984e06",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 5,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Botanic Gardens",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawaregardens.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawaregardens.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.delawaregardens.org/press-releases"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "435de952-d302-549f-9b00-f479320b1c38",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 6,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Center for Horticulture",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://thedch.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://thedch.org/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://thedch.org/event-calendar/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "af8c7603-5c41-560b-af10-93e1305fcd57",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 7,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Children's Museum",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarechildrensmuseum.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarechildrensmuseum.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarechildrensmuseum.org/events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "429f41d3-dd8c-512a-b5bb-c3cf3bd29c08",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 8,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Division of Historical & Cultural Affairs",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://history.delaware.gov/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://history.delaware.gov/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://history.delaware.gov/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "716b739b-6cd0-5285-92ac-f18b6603e173",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 9,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Division of the Arts",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://arts.delaware.gov/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://arts.delaware.gov/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://arts.delaware.gov/news/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "32f36208-6de3-59f5-b0f5-43b378fcc0b0",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 10,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Historical Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://dehistory.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://dehistory.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://dehistory.org/calendar/list/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "573cc56c-9276-57c4-8aff-5f5043471732",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 11,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Museum of Nature & Science",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delmns.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delmns.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delmns.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "b7f693ee-04ad-5f05-b4d0-7ed840f29c5e",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 12,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware Nature Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarenaturesociety.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarenaturesociety.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarenaturesociety.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "0a5d3b21-0a25-55a4-856d-f01ed6c7204b",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 13,
+      "sourceCategory": "non-grantee",
+      "organizationName": "DelawareScene (Div. of the Arts events portal)",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarescene.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "known-absence"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://delawarescene.com/search/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "bc35f22c-3957-5025-9635-4b3781ef79c6",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 14,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Hagley Museum and Library",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.hagley.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.hagley.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.hagley.org/plan-your-visit/calendar/all-events"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "24fabbfc-297c-502e-b44b-6868e193cb8a",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 15,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Historic Odessa Foundation",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://historicodessa.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://historicodessa.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://historicodessa.org/events-calendar"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "59d474c6-0c28-5513-990e-cbd899a9696c",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 16,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Milton Theatre",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.miltontheatre.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.miltontheatre.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.miltontheatre.com/rhp_events-sitemap1.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "b260114e-5ee1-5997-bbce-605e9dbe39a2",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 17,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Mt. Cuba Center",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://mtcubacenter.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://mtcubacenter.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://mtcubacenter.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "ac38b925-a53e-5f13-bd79-38226a688625",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 18,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Nemours Estate",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.nemoursestate.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.nemoursestate.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.nemoursestate.org/events.html"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "7c1ce78b-8a10-5263-8ae2-30cf33c8ce67",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 19,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Old Swedes Historic Site",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://oldswedes.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://oldswedes.org/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://oldswedes.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "1da84f13-86be-5419-bec7-6bc0558696de",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 20,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Riverfront Wilmington",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://riverfrontwilm.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://riverfrontwilm.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://riverfrontwilm.com/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "9b19434e-b985-51a8-b808-dc0e15d1db58",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 21,
+      "sourceCategory": "non-grantee",
+      "organizationName": "The Queen (Wilmington)",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://thequeenwilmington.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://thequeenwilmington.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://thequeenwilmington.com/fad_tm_event-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 22,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Visit Delaware",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitdelaware.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitdelaware.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitdelaware.com/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "ec9a9b05-7ea7-5f84-9c5f-1be1269e9704",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 23,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Visit Rehoboth",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitrehoboth.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitrehoboth.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitrehoboth.com/event"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "6e5e27ee-2acb-51ab-af3e-d56b327608c3",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 24,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Lewes Historical Society",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.historiclewes.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.historiclewes.org/sitemap_index.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.historiclewes.org/tribe_events-sitemap.xml",
+          "https://www.historiclewes.org/events/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "289670bf-61a1-50c8-bfcd-e9171c510580",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 25,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Schwartz Center for the Arts (Dover)",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.schwartzcenter.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "unspecified"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "e0ace3d6-256a-51fa-95ed-29165822a176",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 26,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Delaware State Parks",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.destateparks.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.destateparks.com/programs/"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "ade136c7-33ee-5895-bbed-e629953850b5",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 27,
+      "sourceCategory": "non-grantee",
+      "organizationName": "UD - The Arts at Delaware",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.arts.udel.edu/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "unspecified"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "20e4d1ba-7132-51a3-83ee-0b4095df1d19",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 28,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Arden Club / Gild Hall",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.ardenclub.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "unspecified"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "f640d451-c6a8-53ae-aaff-62dee5634126",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 29,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Brandywine Zoo",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.brandywinezoo.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://brandywinezoo.org/sitemap_index.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://brandywinezoo.org/tribe_events-sitemap.xml"
+        ]
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "25165c4f-b403-5b92-a79a-7e3f70ca9e37",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 30,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Milford Museum",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.milfordmuseum.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "unspecified"
+      },
+      "eventUrls": {
+        "kind": "unspecified"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "9b999d67-89bf-5269-8f70-6aff81b77970",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 31,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Fort Miles Historical Association",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.fortmilesha.org/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://fortmilesmuseum.org/fmha/page-sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "unspecified"
+      },
+      "collectionState": "enabled"
+    },
+    {
+      "id": "fbe6a774-6188-5b58-a9f2-3a1618096631",
+      "catalogFileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "physicalRow": 32,
+      "sourceCategory": "non-grantee",
+      "organizationName": "Visit Wilmington DE",
+      "organizationUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitwilmingtonde.com/"
+        ]
+      },
+      "sitemapUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitwilmingtonde.com/sitemap.xml"
+        ]
+      },
+      "eventUrls": {
+        "kind": "values",
+        "values": [
+          "https://www.visitwilmingtonde.com/events"
+        ]
+      },
+      "collectionState": "enabled"
+    }
+  ],
+  "audits": [],
+  "updatedAt": "2026-08-18T17:32:59.717Z"
+}

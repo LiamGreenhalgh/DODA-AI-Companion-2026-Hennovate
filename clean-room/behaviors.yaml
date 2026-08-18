@@ -1,0 +1,94 @@
+- behaviorId: foundation.health.v1
+  observableBehavior: Versioned liveness and readiness responses expose approved process state only.
+  implementationStatus: complete
+  basis:
+    kind: requirement
+    reference: Requirement 9.1 and 9.14
+  compatibility: reproduced
+  inaccessibleDependencies: []
+  observableDifferences: []
+  evidence:
+    - tests/contract/foundation.contract.test.ts
+- behaviorId: catalog.authoritative-import.v1
+  observableBehavior: Four exact supplied catalog names map to categories and parse atomically with ordered tri-state URL values.
+  implementationStatus: complete
+  basis:
+    kind: catalog
+    reference: Authoritative Source Catalog
+  compatibility: reproduced
+  inaccessibleDependencies: []
+  observableDifferences: []
+  evidence:
+    - tests/unit/catalog.test.ts
+    - tests/property/catalog-mapping.property.test.ts
+- behaviorId: catalog.canonical-export.v1
+  observableBehavior: Canonical CSV export preserves normalized URL order and tri-state values.
+  implementationStatus: complete
+  basis:
+    kind: requirement
+    reference: Requirement 2.22 through 2.24
+  compatibility: reproduced
+  inaccessibleDependencies: []
+  observableDifferences: []
+  evidence:
+    - tests/property/catalog-roundtrip.property.test.ts
+- behaviorId: public.events.list.v1
+  observableBehavior: Public visitors receive only deterministic published upcoming event occurrences.
+  implementationStatus: in-progress
+  basis:
+    kind: requirement
+    reference: Requirement 6
+  compatibility: independently-approximated
+  inaccessibleDependencies:
+    - Private DelawareScene event database and ranking rules
+  observableDifferences:
+    - Uses independently authored local fixture events and explicit chronological ordering
+  evidence: []
+- behaviorId: public.events.detail.v1
+  observableBehavior: Public detail renders known event fields and exact stored external links while hiding unpublished records.
+  implementationStatus: in-progress
+  basis:
+    kind: requirement
+    reference: Requirement 8
+  compatibility: independently-approximated
+  inaccessibleDependencies:
+    - Private DelawareScene event records and templates
+  observableDifferences:
+    - Uses original visual design and independently authored fixture content
+  evidence: []
+- behaviorId: public.search-filter.v1
+  observableBehavior: Contiguous case-insensitive search combines with AND-between and OR-within filters represented in the URL.
+  implementationStatus: in-progress
+  basis:
+    kind: requirement
+    reference: Requirement 7
+  compatibility: reproduced
+  inaccessibleDependencies: []
+  observableDifferences: []
+  evidence: []
+- behaviorId: public.navigation.v1
+  observableBehavior: Original responsive navigation labels all required public discovery and submission areas.
+  implementationStatus: complete
+  basis:
+    kind: independent
+    reference: Independently created information architecture implementing Requirement 18.1
+  compatibility: independently-approximated
+  inaccessibleDependencies:
+    - Protected DelawareScene branding, imagery, fonts, and proprietary page templates
+  observableDifferences:
+    - Uses a new Delaware Arts Calendar name, system fonts, CSS decoration, and original layout
+  evidence:
+    - apps/web/src/App.tsx
+    - apps/web/src/styles.css
+- behaviorId: moderation.demo-transition.v1
+  observableBehavior: A local editor demo can approve, reject, or archive events with session, request-integrity, version, idempotency, and audit controls.
+  implementationStatus: in-progress
+  basis:
+    kind: independent
+    reference: Independent local approximation of Requirements 5 and 10
+  compatibility: independently-approximated
+  inaccessibleDependencies:
+    - Private DelawareScene accounts, identity provider, moderation database, and workflows
+  observableDifferences:
+    - Local demo access is configured by environment and sessions are process-local
+  evidence: []

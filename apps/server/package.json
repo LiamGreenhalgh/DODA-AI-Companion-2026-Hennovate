@@ -1,0 +1,24 @@
+{
+  "name": "@delaware-scene/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@delaware-scene/application": "workspace:*",
+    "@delaware-scene/auth": "workspace:*",
+    "@delaware-scene/contracts": "workspace:*",
+    "@delaware-scene/database": "workspace:*",
+    "@delaware-scene/domain": "workspace:*",
+    "@delaware-scene/ingestion": "workspace:*",
+    "@delaware-scene/observability": "workspace:*",
+    "@fastify/cookie": "11.1.2",
+    "@fastify/static": "10.1.3",
+    "fastify": "5.12.0"
+  },
+  "devDependencies": { "tsx": "4.23.12", "typescript": "5.9.3" }
+}

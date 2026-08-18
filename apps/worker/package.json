@@ -1,0 +1,18 @@
+{
+  "name": "@delaware-scene/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "smoke": "node dist/main.js --once"
+  },
+  "dependencies": {
+    "@delaware-scene/application": "workspace:*",
+    "@delaware-scene/ingestion": "workspace:*",
+    "@delaware-scene/observability": "workspace:*"
+  },
+  "devDependencies": { "tsx": "4.23.12", "typescript": "5.9.3" }
+}

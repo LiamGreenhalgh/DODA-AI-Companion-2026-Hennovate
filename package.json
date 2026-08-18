@@ -1,0 +1,53 @@
+{
+  "name": "delaware-scene-clean-room",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clean-room Delaware arts and culture event discovery service",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "corepack pnpm build:packages && corepack pnpm --filter @delaware-scene/server build && corepack pnpm --filter @delaware-scene/worker build && corepack pnpm --filter @delaware-scene/web build",
+    "build:packages": "corepack pnpm --filter \"@delaware-scene/*\" --workspace-concurrency=1 run build",
+    "clean": "tsx scripts/clean.ts",
+    "typecheck": "tsc -b --pretty false",
+    "lint": "eslint apps packages scripts tests *.ts --max-warnings=0",
+    "format:check": "prettier --check . --ignore-path .gitignore",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:property": "vitest run tests/property",
+    "test:contract": "vitest run tests/contract",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test",
+    "catalog:sync": "tsx scripts/sync-catalogs.ts",
+    "catalog:import": "tsx scripts/import-catalogs.ts --file",
+    "catalog:import:all": "tsx scripts/import-catalogs.ts --all",
+    "catalog:export": "tsx scripts/export-catalog.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "seed": "tsx scripts/seed-demo.ts",
+    "cleanroom:validate": "tsx scripts/validate-clean-room.ts",
+    "dev": "corepack pnpm seed && corepack pnpm --parallel --filter @delaware-scene/server --filter @delaware-scene/web dev",
+    "start": "corepack pnpm --filter @delaware-scene/server start",
+    "validate": "corepack pnpm catalog:import:all && corepack pnpm seed && corepack pnpm typecheck && corepack pnpm lint && corepack pnpm test && corepack pnpm build && corepack pnpm cleanroom:validate"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@eslint/js": "9.39.1",
+    "@sinclair/typebox": "0.34.52",
+    "@types/node": "22.19.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.0.5",
+    "eslint": "9.39.1",
+    "fast-check": "4.9.0",
+    "prettier": "3.9.6",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0",
+    "vite": "8.2.1",
+    "vitest": "4.1.11",
+    "yaml": "2.9.0"
+  }
+}

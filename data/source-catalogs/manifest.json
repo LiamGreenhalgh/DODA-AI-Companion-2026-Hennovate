@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "fileName": "DelawareScene Events Master List - DDOA-funded grantee websites.csv",
+      "byteLength": 10011,
+      "sha256": "343272d21d4ef645586a05b721eda38e7f49ba2c51bcdf59cf780dad6420b38f"
+    },
+    {
+      "fileName": "DelawareScene Events Master List - non-grantee Delaware venues and presenters.csv",
+      "byteLength": 4012,
+      "sha256": "6fee86cc984f5ec1e0ef1ad8a7f2ca43399f03ae474007d495384e6e23572ec3"
+    },
+    {
+      "fileName": "Library Events.csv",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "fileName": "Government Events.csv",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["assetId", "usageLocations", "source", "permissionBasis", "attribution", "copyrightNotice", "substituteFor", "included"],
+    "properties": {
+      "assetId": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$" },
+      "usageLocations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+      "source": { "type": "string", "minLength": 1 },
+      "permissionBasis": { "enum": ["original-project-work", "system-provided-no-redistribution", "documented-license", "public-domain", "none"] },
+      "attribution": { "type": ["string", "null"] },
+      "copyrightNotice": { "type": ["string", "null"] },
+      "substituteFor": { "type": ["string", "null"] },
+      "included": { "type": "boolean" }
+    }
+  }
+}

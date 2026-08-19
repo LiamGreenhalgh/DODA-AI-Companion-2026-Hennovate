@@ -107,7 +107,7 @@ describe('production preview from the server package context', () => {
       totalCount: number;
     };
     expect(body.totalCount).toBeGreaterThan(0);
-    expect(body.items).toHaveLength(body.totalCount);
+    expect(body.items).toHaveLength(Math.min(100, body.totalCount));
     expect(body.items.every((event) => !event.publicSourceUrl?.includes('example.org'))).toBe(true);
   });
 });

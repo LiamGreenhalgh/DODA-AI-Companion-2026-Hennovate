@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFile, rename, writeFile } from 'node:fs/promises';
 import { isIP } from 'node:net';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { JsonEventRepository, JsonStateStore } from '../packages/database/src/index.js';
 import {
   DELAWARE_TIME_ZONE,
@@ -108,7 +109,7 @@ interface RobotsPolicy {
 
 const robotsCache = new Map<string, Promise<RobotsPolicy>>();
 
-function stableUuid(value: string): string {
+export function stableUuid(value: string): string {
   const hex = createHash('sha256').update(value, 'utf8').digest('hex').slice(0, 32).split('');
   hex[12] = '5';
   hex[16] = ((Number.parseInt(hex[16] ?? '0', 16) & 0x3) | 0x8).toString(16);
@@ -989,7 +990,10 @@ function extractHtmlFallback(
 
 function extractLinks(html: string, pageUrl: string): string[] {
   if (shouldStopSocialRecursion(pageUrl)) return [];
-  const pageOrigin = new URL(pageUrl).origin;
+  const currentUrl = new URL(pageUrl);
+  const pageOrigin = currentUrl.origin;
+  const isCivicPlusPage = /\/calendar\.aspx$/iu.test(currentUrl.pathname);
+  if (isCivicPlusPage && currentUrl.searchParams.has('EID')) return [];
   const candidates = new Map<string, number>();
   for (const match of html.matchAll(/<a\b[^>]*href\s*=\s*["']([^"'#]+)["'][^>]*>/giu)) {
     const resolved = resolveUrl(decodeHtml(match[1] ?? ''), pageUrl);
@@ -1002,7 +1006,7 @@ function extractLinks(html: string, pageUrl: string): string[] {
     const isCivicPlusDetail = /\/calendar\.aspx$/iu.test(url.pathname) && url.searchParams.has('EID');
     const isCivicPlusNavigation =
       /\/calendar\.aspx$/iu.test(url.pathname) && !url.searchParams.has('EID');
-    if (isCivicPlusNavigation) continue;
+    if ((isCivicPlusPage && !isCivicPlusDetail) || isCivicPlusNavigation) continue;
     const isDirectEventPage = /\/events?\/[^/]+/iu.test(url.pathname) || isCivicPlusDetail;
     if (!isCalendarLink && !isSocialEvent && !EVENT_HINT.test(url.pathname)) continue;
     const priority =
@@ -1027,6 +1031,7 @@ function toEventRecord(
   extracted: ExtractedEvent,
   retrievedAt: string,
 ): EventRecord | null {
+  if (/\b(?:cancelled|canceled)\b/iu.test(extracted.title.trim())) return null;
   const rawOccurrences: RawOccurrence[] = extracted.occurrences.map((occurrence, index) => ({
     id: stableUuid(
       `${source.id}|${extracted.suppliedId ?? extracted.sourceUrl}|${occurrence.start}|${index}`,
@@ -1080,37 +1085,69 @@ function toEventRecord(
   return { ...normalized.value, publicationStatus: 'published' };
 }
 
-function eventDedupeKey(event: EventRecord): string {
-  const first = event.occurrences[0];
-  const start = first?.kind === 'date' ? first.startDate : (first?.startAt ?? '');
-  return [
-    normalizeWhitespace(event.title).toLowerCase(),
-    start,
-    normalizeWhitespace(event.venue ?? '').toLowerCase(),
-    normalizeWhitespace(event.city ?? '').toLowerCase(),
-  ].join('|');
+export function dedupeText(value: string): string {
+  return normalizeWhitespace(value)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/gu, '')
+    .toLowerCase()
+    .replace(/&/gu, ' and ')
+    .replace(/[^a-z0-9]+/gu, ' ')
+    .trim();
 }
 
-function mergeEvents(events: readonly EventRecord[]): EventRecord[] {
+export function eventDedupeKey(event: EventRecord): string {
+  const first = event.occurrences[0];
+  const start = first?.kind === 'date' ? first.startDate : (first?.startAt ?? '');
+  const city = dedupeText(event.city ?? '');
+  const location = city ? `city:${city}` : `venue:${dedupeText(event.venue ?? '')}`;
+  return [dedupeText(event.title), start, location].join('|');
+}
+
+function eventCompletenessScore(event: EventRecord): number {
+  const venue = dedupeText(event.venue ?? '');
+  const usefulVenue = venue.length > 0 && venue !== 'event location' && venue !== '-';
+  return (
+    Math.min(3, Math.floor((event.description?.length ?? 0) / 250)) +
+    (usefulVenue ? 3 : 0) +
+    (event.city ? 2 : 0) +
+    (event.address ? 3 : 0) +
+    (event.ticketUrl ? 2 : 0) +
+    (event.categories.length > 0 ? 1 : 0) +
+    (event.organization ? 1 : 0)
+  );
+}
+
+export function mergeEvents(events: readonly EventRecord[]): EventRecord[] {
   const merged = new Map<string, EventRecord>();
+  const keyByEventId = new Map<string, string>();
   for (const event of [...events].sort((left, right) => left.id.localeCompare(right.id))) {
-    const key = eventDedupeKey(event);
+    const key = keyByEventId.get(event.id) ?? eventDedupeKey(event);
     const existing = merged.get(key);
     if (!existing) {
       merged.set(key, structuredClone(event));
+      keyByEventId.set(event.id, key);
       continue;
     }
-    existing.provenance = [
+    const preferred =
+      eventCompletenessScore(event) > eventCompletenessScore(existing)
+        ? structuredClone(event)
+        : existing;
+    preferred.provenance = [
       ...existing.provenance,
       ...event.provenance.filter(
         (candidate) =>
           !existing.provenance.some(
             (item) =>
               item.sourceRecordId === candidate.sourceRecordId &&
-              item.sourceUrl === candidate.sourceUrl,
+              item.sourceUrl === candidate.sourceUrl &&
+              item.sourceSuppliedId === candidate.sourceSuppliedId &&
+              item.retrievedAt === candidate.retrievedAt,
           ),
       ),
     ];
+    merged.set(key, preferred);
+    keyByEventId.set(existing.id, key);
+    keyByEventId.set(event.id, key);
   }
   return [...merged.values()].sort((left, right) => {
     const leftOccurrence = left.occurrences[0];
@@ -1139,7 +1176,11 @@ async function scrapeSource(
   source: CanonicalSourceRecord,
   retrievedAt: string,
 ): Promise<SourceScrapeResult> {
-  const entryUrls = entryUrlsFor(source).map(normalizeQueuedUrl);
+  const configuredEntryUrls = entryUrlsFor(source).map(normalizeQueuedUrl);
+  const delawareScene = isDelawareSceneSource(source);
+  const discoveryUrls = delawareScene ? delawareSceneDiscoveryUrls().map(normalizeQueuedUrl) : [];
+  const entryUrls = [...new Set([...configuredEntryUrls, ...discoveryUrls])];
+  const maxPages = delawareScene ? MAX_DELAWARE_SCENE_PAGES : MAX_PAGES_PER_SOURCE;
   const attemptedUrls: string[] = [];
   const errors: ScrapeError[] = [];
   const extracted: ExtractedEvent[] = [];
@@ -1148,7 +1189,7 @@ async function scrapeSource(
   let pagesFetched = 0;
   let blocked = 0;
 
-  while (queue.length > 0 && attemptedUrls.length < MAX_PAGES_PER_SOURCE) {
+  while (queue.length > 0 && attemptedUrls.length < maxPages) {
     const url = queue.shift();
     if (!url) break;
     attemptedUrls.push(url);
@@ -1157,6 +1198,9 @@ async function scrapeSource(
         blocked += 1;
         errors.push({ url, message: 'blocked by robots.txt' });
         continue;
+      }
+      if (delawareScene && new URL(url).hostname.toLowerCase() === 'delawarescene.com') {
+        await new Promise((resolve) => setTimeout(resolve, DELAWARE_SCENE_REQUEST_DELAY_MS));
       }
       const page = await fetchText(url);
       pagesFetched += 1;
@@ -1184,9 +1228,13 @@ async function scrapeSource(
         }
         continue;
       }
-      const schemaEvents = extractJsonLd(page.body, page.url, source.organizationName);
-      extracted.push(...schemaEvents);
-      if (schemaEvents.length === 0) {
+      const structuredEvents = [
+        ...extractJsonLd(page.body, page.url, source.organizationName),
+        ...extractDelawareSceneEvent(page.body, page.url, source.organizationName),
+        ...extractCivicPlusEvent(page.body, page.url, source.organizationName),
+      ];
+      extracted.push(...structuredEvents);
+      if (structuredEvents.length === 0) {
         extracted.push(...extractHtmlFallback(page.body, page.url, source.organizationName));
       }
       for (const link of extractLinks(page.body, page.url)) {
@@ -1250,52 +1298,159 @@ async function concurrentMap<T, R>(
   return results;
 }
 
-const root = process.cwd();
-const statePath = join(root, 'data', 'generated', 'state.json');
-const state = JSON.parse(await readFile(statePath, 'utf8')) as {
-  sources: CanonicalSourceRecord[];
-};
-const sources = state.sources.filter((source) => source.collectionState === 'enabled');
-if (sources.length === 0) throw new Error('No enabled canonical sources are available.');
+function quoteCsv(value: string): string {
+  return /[",\r\n]/u.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
+}
 
-const startedAt = new Date().toISOString();
-console.log(
-  `Scraping ${sources.length} enabled event sources with concurrency ${SOURCE_CONCURRENCY}.`,
-);
-const results = await concurrentMap(sources, SOURCE_CONCURRENCY, async (source, index) => {
-  const result = await scrapeSource(source, startedAt);
+function occurrenceValues(event: EventRecord): {
+  starts: string;
+  ends: string;
+  timezones: string;
+} {
+  return {
+    starts: event.occurrences
+      .map((occurrence) =>
+        occurrence.kind === 'date' ? occurrence.startDate : occurrence.startAt,
+      )
+      .join('; '),
+    ends: event.occurrences
+      .map((occurrence) =>
+        occurrence.kind === 'date' ? (occurrence.endDate ?? '') : (occurrence.endAt ?? ''),
+      )
+      .join('; '),
+    timezones: event.occurrences
+      .map((occurrence) => (occurrence.kind === 'instant' ? occurrence.sourceTimezone : 'date-only'))
+      .join('; '),
+  };
+}
+
+export function serializeMasterEvents(events: readonly EventRecord[]): string {
+  const headers = [
+    'Event ID',
+    'Title',
+    'Start',
+    'End',
+    'Timezone',
+    'Organization',
+    'Venue',
+    'Address',
+    'City',
+    'Region',
+    'Categories',
+    'Cost',
+    'Description',
+    'Public Source URL',
+    'Ticket URL',
+    'Source Category',
+    'Source Record IDs',
+    'Source Supplied IDs',
+    'Source URLs',
+    'Retrieved At',
+  ];
+  const rows = events.map((event) => {
+    const occurrences = occurrenceValues(event);
+    const provenance = [...event.provenance].sort(
+      (left, right) =>
+        left.sourceRecordId.localeCompare(right.sourceRecordId) ||
+        left.sourceUrl.localeCompare(right.sourceUrl),
+    );
+    return [
+      event.id,
+      event.title,
+      occurrences.starts,
+      occurrences.ends,
+      occurrences.timezones,
+      event.organization ?? '',
+      event.venue ?? '',
+      event.address ? JSON.stringify(event.address) : '',
+      event.city ?? '',
+      event.region ?? '',
+      event.categories.join('; '),
+      event.cost ?? '',
+      event.description ?? '',
+      event.publicSourceUrl ?? '',
+      event.ticketUrl ?? '',
+      event.sourceCategory,
+      [...new Set(provenance.map((item) => item.sourceRecordId))].join('; '),
+      [...new Set(provenance.map((item) => item.sourceSuppliedId).filter((value) => value !== null))].join(
+        '; ',
+      ),
+      [...new Set(provenance.map((item) => item.sourceUrl))].join('; '),
+      [...new Set(provenance.map((item) => item.retrievedAt))].join('; '),
+    ]
+      .map((value) => quoteCsv(value))
+      .join(',');
+  });
+  return `${[headers.join(','), ...rows].join('\r\n')}\r\n`;
+}
+
+export async function writeAtomically(path: string, content: string): Promise<void> {
+  const temporaryPath = `${path}.${process.pid}.tmp`;
+  await writeFile(temporaryPath, content, 'utf8');
+  await rename(temporaryPath, path);
+}
+
+export function hasSceneScoutProvenance(event: EventRecord): boolean {
+  return event.provenance.some((item) => item.sourceSuppliedId?.startsWith('scenescout:'));
+}
+
+export async function runScrape(): Promise<void> {
+  const root = process.cwd();
+  const statePath = join(root, 'data', 'generated', 'state.json');
+  const state = JSON.parse(await readFile(statePath, 'utf8')) as {
+    sources: CanonicalSourceRecord[];
+  };
+  const sources = state.sources.filter((source) => source.collectionState === 'enabled');
+  if (sources.length === 0) throw new Error('No enabled canonical sources are available.');
+
+  const startedAt = new Date().toISOString();
   console.log(
-    `[${index + 1}/${sources.length}] ${source.organizationName}: ${result.report.status}, ${result.report.eventsAccepted} accepted event(s), ${result.report.pagesFetched} page(s)`,
+    `Scraping ${sources.length} enabled event sources with concurrency ${SOURCE_CONCURRENCY}.`,
   );
-  return result;
-});
+  const results = await concurrentMap(sources, SOURCE_CONCURRENCY, async (source, index) => {
+    const result = await scrapeSource(source, startedAt);
+    console.log(
+      `[${index + 1}/${sources.length}] ${source.organizationName}: ${result.report.status}, ${result.report.eventsAccepted} accepted event(s), ${result.report.pagesFetched} page(s)`,
+    );
+    return result;
+  });
 
-const events = mergeEvents(results.flatMap((result) => result.events));
-const repository = new JsonEventRepository(new JsonStateStore(statePath));
-await repository.replaceAll(events);
+  const scrapedEvents = mergeEvents(results.flatMap((result) => result.events));
+  const repository = new JsonEventRepository(new JsonStateStore(statePath));
+  const retainedSceneScoutEvents = (await repository.list()).filter(hasSceneScoutProvenance);
+  const events = mergeEvents([...scrapedEvents, ...retainedSceneScoutEvents]);
+  await repository.replaceAll(events);
 
-const sourceStatusCounts: Record<SourceStatus, number> = {
-  completed: 0,
-  'completed-no-events': 0,
-  blocked: 0,
-  failed: 0,
-};
-for (const result of results) sourceStatusCounts[result.report.status] += 1;
-const report: ScrapeReport = {
-  startedAt,
-  completedAt: new Date().toISOString(),
-  sourceCount: sources.length,
-  sourceStatusCounts,
-  pagesFetched: results.reduce((sum, result) => sum + result.report.pagesFetched, 0),
-  eventsExtracted: results.reduce((sum, result) => sum + result.report.eventsExtracted, 0),
-  eventsAccepted: events.length,
-  sources: results.map((result) => result.report),
-};
-await writeFile(
-  join(root, 'data', 'generated', 'scrape-report.json'),
-  `${JSON.stringify(report, null, 2)}\n`,
-  'utf8',
-);
-console.log(
-  `Persisted ${events.length} real upcoming event(s) from ${sources.length} source(s). Statuses: ${JSON.stringify(sourceStatusCounts)}.`,
-);
+  const sourceStatusCounts: Record<SourceStatus, number> = {
+    completed: 0,
+    'completed-no-events': 0,
+    blocked: 0,
+    failed: 0,
+  };
+  for (const result of results) sourceStatusCounts[result.report.status] += 1;
+  const report: ScrapeReport = {
+    startedAt,
+    completedAt: new Date().toISOString(),
+    sourceCount: sources.length,
+    sourceStatusCounts,
+    pagesFetched: results.reduce((sum, result) => sum + result.report.pagesFetched, 0),
+    eventsExtracted: results.reduce((sum, result) => sum + result.report.eventsExtracted, 0),
+    eventsAccepted: events.length,
+    sources: results.map((result) => result.report),
+  };
+  await writeAtomically(
+    join(root, 'data', 'generated', 'master-events.csv'),
+    serializeMasterEvents(events),
+  );
+  await writeAtomically(
+    join(root, 'data', 'generated', 'scrape-report.json'),
+    `${JSON.stringify(report, null, 2)}\n`,
+  );
+  console.log(
+    `Persisted ${events.length} real upcoming event(s), including ${retainedSceneScoutEvents.length} retained SceneScout event(s), from ${sources.length} source(s) and exported data/generated/master-events.csv. Statuses: ${JSON.stringify(sourceStatusCounts)}.`,
+  );
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await runScrape();
+}

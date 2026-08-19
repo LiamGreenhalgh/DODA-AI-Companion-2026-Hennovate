@@ -561,7 +561,7 @@ export function isUpcoming(occurrence: EventOccurrence, openedAt: InstantReferen
     const today = isCalendarClock(openedAt)
       ? openedAt.today(DELAWARE_TIME_ZONE)
       : instantFromReference(openedAt).toZonedDateTimeISO(DELAWARE_TIME_ZONE).toPlainDate();
-    return Temporal.PlainDate.compare(occurrence.startDate, today) >= 0;
+    return Temporal.PlainDate.compare(occurrence.endDate ?? occurrence.startDate, today) >= 0;
   }
   const instant = instantFromReference(openedAt);
   if (occurrence.endAt) return Temporal.Instant.compare(occurrence.endAt, instant) > 0;

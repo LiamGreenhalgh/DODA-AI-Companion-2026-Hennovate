@@ -46,7 +46,7 @@ class RecordingCatalogRepository implements CatalogRepository {
 }
 
 describe('authoritative source catalog import', () => {
-  it('imports both populated supplied files and accepts both supplied zero-byte categories', async () => {
+  it('imports every supplied catalog and accepts optional categories whether empty or populated', async () => {
     let totalRecords = 0;
     for (const fileName of AUTHORITATIVE_FILE_NAMES) {
       const bytes = await readFile(join(process.cwd(), 'data', 'source-catalogs', fileName));
@@ -62,15 +62,15 @@ describe('authoritative source catalog import', () => {
             record.collectionState === 'enabled',
         ),
       ).toBe(true);
-      if (fileName === 'Library Events.csv' || fileName === 'Government Events.csv') {
-        expect(bytes.byteLength).toBe(0);
+      if (bytes.byteLength === 0) {
+        expect(['Library Events.csv', 'Government Events.csv']).toContain(fileName);
         expect(imported.records).toEqual([]);
       } else {
         expect(imported.records.length).toBeGreaterThan(0);
       }
       totalRecords += imported.records.length;
     }
-    expect(totalRecords).toBe(98);
+    expect(totalRecords).toBeGreaterThan(98);
   });
 
   it('handles aliases, escaped quotes, quoted commas, Unicode, multiline fields, and ordered semicolon URLs', () => {

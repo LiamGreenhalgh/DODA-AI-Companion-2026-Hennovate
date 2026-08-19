@@ -4,8 +4,10 @@ import { JsonCatalogRepository, JsonEventRepository, JsonStateStore } from '@del
 import { SystemClock } from '@delaware-scene/domain';
 import { buildApp } from './app.js';
 import { loadConfig } from './config.js';
+import { resolveWorkspacePaths } from './paths.js';
 
-const config = loadConfig();
+const workspacePaths = resolveWorkspacePaths();
+const config = loadConfig(process.env, process.cwd(), workspacePaths.defaultDataDirectory);
 const store = new JsonStateStore(join(config.dataDirectory, 'state.json'));
 const repository = new JsonEventRepository(store);
 const sourceReader = new JsonCatalogRepository(store);
@@ -15,7 +17,7 @@ const app = await buildApp({
   sourceReader,
   secretProvider: new EnvironmentSecretProvider(),
   clock: new SystemClock(),
-  staticDirectory: join(process.cwd(), 'apps', 'web', 'dist'),
+  staticDirectory: workspacePaths.staticDirectory,
   logger: true,
 });
 

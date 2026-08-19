@@ -1,0 +1,36 @@
+{
+  "version": "54.0.0",
+  "files": {
+    "02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093": {
+      "displayName": "DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider Code",
+      "source": {
+        "path": "asset.02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "125068022861-us-east-1-de930f64": {
+          "bucketName": "cdk-hnb659fds-assets-125068022861-us-east-1",
+          "objectKey": "02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::125068022861:role/cdk-hnb659fds-file-publishing-role-125068022861-us-east-1"
+        }
+      }
+    },
+    "239687191c1a71ffc139b8bd9cbe4da63e95f1fa1ec59b97a0ae3180d3644eba": {
+      "displayName": "DelawareScene-Preview-Service-public Template",
+      "source": {
+        "path": "DelawareScenePreviewService-public.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "125068022861-us-east-1-d4c029cb": {
+          "bucketName": "cdk-hnb659fds-assets-125068022861-us-east-1",
+          "objectKey": "239687191c1a71ffc139b8bd9cbe4da63e95f1fa1ec59b97a0ae3180d3644eba.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::125068022861:role/cdk-hnb659fds-file-publishing-role-125068022861-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

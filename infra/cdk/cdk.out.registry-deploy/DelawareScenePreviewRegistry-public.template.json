@@ -1,0 +1,702 @@
+{
+ "Description": "Retained ECR repository and bounded CodeBuild project for the Hennovate preview.",
+ "Resources": {
+  "PreviewRepositoryD0542DBA": {
+   "Type": "AWS::ECR::Repository",
+   "Properties": {
+    "EmptyOnDelete": false,
+    "ImageScanningConfiguration": {
+     "ScanOnPush": true
+    },
+    "ImageTagMutability": "IMMUTABLE",
+    "LifecyclePolicy": {
+     "LifecyclePolicyText": "{\"rules\":[{\"rulePriority\":1,\"description\":\"Retain the ten most recent preview images\",\"selection\":{\"tagStatus\":\"any\",\"countType\":\"imageCountMoreThan\",\"countNumber\":10},\"action\":{\"type\":\"expire\"}}]}"
+    },
+    "RepositoryName": "delaware-scene-preview-public",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/PreviewRepository/Resource"
+   }
+  },
+  "BuildSourceBucketB61842F6": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 1
+       },
+       "ExpirationInDays": 7,
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/BuildSourceBucket/Resource"
+   }
+  },
+  "BuildSourceBucketPolicyB3CE9B83": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "BuildSourceBucketB61842F6"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "BuildSourceBucketB61842F6",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "BuildSourceBucketB61842F6",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "BuildSourceBucketB61842F6",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "BuildSourceBucketB61842F6",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/BuildSourceBucket/Policy/Resource"
+   }
+  },
+  "BuildSourceBucketAutoDeleteObjectsCustomResource98384CFD": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "BuildSourceBucketB61842F6"
+    }
+   },
+   "DependsOn": [
+    "BuildSourceBucketPolicyB3CE9B83"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/BuildSourceBucket/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-125068022861-us-east-1",
+     "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs24.x",
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Lambda function for auto-deleting objects in ",
+       {
+        "Ref": "BuildSourceBucketB61842F6"
+       },
+       " S3 bucket."
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+    "aws:asset:property": "Code"
+   }
+  },
+  "ContainerBuildProjectRole023CB502": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "codebuild.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/ContainerBuildProject/Role/Resource"
+   }
+  },
+  "ContainerBuildProjectRoleDefaultPolicy745D65FB": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "BuildSourceBucketB61842F6",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "BuildSourceBucketB61842F6",
+             "Arn"
+            ]
+           },
+           "/source/prod-20260819-0700.zip"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:logs:us-east-1:125068022861:log-group:/aws/codebuild/",
+           {
+            "Ref": "ContainerBuildProject6810EECB"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:logs:us-east-1:125068022861:log-group:/aws/codebuild/",
+           {
+            "Ref": "ContainerBuildProject6810EECB"
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "codebuild:CreateReportGroup",
+        "codebuild:CreateReport",
+        "codebuild:UpdateReport",
+        "codebuild:BatchPutTestCases",
+        "codebuild:BatchPutCodeCoverages"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:codebuild:us-east-1:125068022861:report-group/",
+          {
+           "Ref": "ContainerBuildProject6810EECB"
+          },
+          "-*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "BuildSourceBucketB61842F6",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "BuildSourceBucketB61842F6",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:CompleteLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:InitiateLayerUpload",
+        "ecr:PutImage"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "PreviewRepositoryD0542DBA",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "ecr:GetAuthorizationToken",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ContainerBuildProjectRoleDefaultPolicy745D65FB",
+    "Roles": [
+     {
+      "Ref": "ContainerBuildProjectRole023CB502"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/ContainerBuildProject/Role/DefaultPolicy/Resource"
+   }
+  },
+  "ContainerBuildProject6810EECB": {
+   "Type": "AWS::CodeBuild::Project",
+   "Properties": {
+    "Artifacts": {
+     "Type": "NO_ARTIFACTS"
+    },
+    "Cache": {
+     "Type": "NO_CACHE"
+    },
+    "Description": "Builds the Hennovate preview image when no local container runtime is available.",
+    "EncryptionKey": "alias/aws/s3",
+    "Environment": {
+     "ComputeType": "BUILD_GENERAL1_SMALL",
+     "EnvironmentVariables": [
+      {
+       "Name": "REPOSITORY_URI",
+       "Type": "PLAINTEXT",
+       "Value": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::Select": [
+            4,
+            {
+             "Fn::Split": [
+              ":",
+              {
+               "Fn::GetAtt": [
+                "PreviewRepositoryD0542DBA",
+                "Arn"
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          ".dkr.ecr.",
+          {
+           "Fn::Select": [
+            3,
+            {
+             "Fn::Split": [
+              ":",
+              {
+               "Fn::GetAtt": [
+                "PreviewRepositoryD0542DBA",
+                "Arn"
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          ".",
+          {
+           "Ref": "AWS::URLSuffix"
+          },
+          "/",
+          {
+           "Ref": "PreviewRepositoryD0542DBA"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "Name": "RELEASE_VERSION",
+       "Type": "PLAINTEXT",
+       "Value": "prod-20260819-0700"
+      }
+     ],
+     "Image": "aws/codebuild/standard:7.0",
+     "ImagePullCredentialsType": "CODEBUILD",
+     "PrivilegedMode": true,
+     "Type": "LINUX_CONTAINER"
+    },
+    "Name": "delaware-scene-preview-public",
+    "QueuedTimeoutInMinutes": 30,
+    "ServiceRole": {
+     "Fn::GetAtt": [
+      "ContainerBuildProjectRole023CB502",
+      "Arn"
+     ]
+    },
+    "Source": {
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"pre_build\": {\n      \"commands\": [\n        \"aws --version\",\n        \"docker --version\",\n        \"aws ecr get-login-password --region \\\"$AWS_DEFAULT_REGION\\\" | docker login --username AWS --password-stdin \\\"${REPOSITORY_URI%/*}\\\"\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"docker build --pull --build-arg \\\"RELEASE_VERSION=$RELEASE_VERSION\\\" -t \\\"$REPOSITORY_URI:$RELEASE_VERSION\\\" .\",\n        \"docker push \\\"$REPOSITORY_URI:$RELEASE_VERSION\\\"\"\n      ]\n    },\n    \"post_build\": {\n      \"commands\": [\n        \"aws ecr describe-images --repository-name \\\"${REPOSITORY_URI##*/}\\\" --image-ids \\\"imageTag=$RELEASE_VERSION\\\" --query \\\"imageDetails[0].imageDigest\\\" --output text\"\n      ]\n    }\n  }\n}",
+     "Location": {
+      "Fn::Join": [
+       "",
+       [
+        {
+         "Ref": "BuildSourceBucketB61842F6"
+        },
+        "/source/prod-20260819-0700.zip"
+       ]
+      ]
+     },
+     "Type": "S3"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "TimeoutInMinutes": 30
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/ContainerBuildProject/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/5WPT0/DMAzFP8t6Ts3oAAlu27ivao8IoTT1pvRfptjZmKJ8d5QGUThy8rOe/Xt2AcXTI6xX8kq5avt80A34mqXqhbzSh0dlwVd4NqTZ2JvYH6elC4I24HdO9cjRSerNZ6P+1FP2kv2mRhxtYLYI0ujWsXnFARkPTYeKKQvvIlmlGbS6LdTU/4OdFmqWjCNOMzoIZVpsnB5a8KU1MTImfMsgtBzBV2bA+c9YlzOSCkHsHbEZKyTjrEqTP/qPVVpz0S3anSQUWyLkmuVJT6e4c3B8dhzEZFqEju4uxQPcP8N61ZHWuXUT6xGhSvULBwzYkaYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewRegistry-public/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "RepositoryUri": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      {
+       "Fn::Select": [
+        4,
+        {
+         "Fn::Split": [
+          ":",
+          {
+           "Fn::GetAtt": [
+            "PreviewRepositoryD0542DBA",
+            "Arn"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      ".dkr.ecr.",
+      {
+       "Fn::Select": [
+        3,
+        {
+         "Fn::Split": [
+          ":",
+          {
+           "Fn::GetAtt": [
+            "PreviewRepositoryD0542DBA",
+            "Arn"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      ".",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "PreviewRepositoryD0542DBA"
+      }
+     ]
+    ]
+   }
+  },
+  "SourceBucketName": {
+   "Value": {
+    "Ref": "BuildSourceBucketB61842F6"
+   }
+  },
+  "SourceObjectKey": {
+   "Value": "source/prod-20260819-0700.zip"
+  },
+  "BuildProjectName": {
+   "Value": {
+    "Ref": "ContainerBuildProject6810EECB"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

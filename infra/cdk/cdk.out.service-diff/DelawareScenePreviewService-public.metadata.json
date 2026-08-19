@@ -1,0 +1,583 @@
+{
+  "/DelawareScenePreviewService-public": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:stack-tags",
+      "data": [
+        {
+          "key": "Application",
+          "value": "Hennovate"
+        },
+        {
+          "key": "DeploymentTier",
+          "value": "production-preview"
+        },
+        {
+          "key": "Environment",
+          "value": "public"
+        },
+        {
+          "key": "ManagedBy",
+          "value": "AWS-CDK"
+        }
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebsiteUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebsiteUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:116:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/LoadBalancerDnsName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LoadBalancerDnsName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:117:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/ClusterName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ClusterName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:118:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/ServiceName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:119:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcE8F7AEFC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcIGW5195D86C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcVPCGW40AE0594"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewCluster/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewCluster67EEBF28"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Cluster2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:30:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebLogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebLogGroup68B8CF3C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LogGroup2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:35:22)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebTaskDefinition/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebTaskDefinition8DF7C630"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new FargateTaskDefinition2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:40:28)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LoadBalancerDNS": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLoadBalancerDNS2E3B459D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/ServiceURL": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceServiceURL2AB8D470"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewDistribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewDistributionF5EEDAB8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:96:26)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...App.synth in .pnpm...",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:33:5)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet1Subnet27CA943F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet1RouteTableF1ADF20B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet1RouteTableAssociation8CE1CEDB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet1DefaultRouteD7250094"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:208 in .pnpm...",
+        "Array.forEach (:)",
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet2Subnet6D700B6A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet2RouteTable9ACC61D9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet2RouteTableAssociationFFA2EA64"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in .pnpm...",
+        "Array.forEach (:)",
+        "....pnpm..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcPublicApplicationSubnet2DefaultRoute9405E9AB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\Liamg\\Hennovate\\node_modules\\.pnpm\\aws-cdk-lib@2.265.0_constructs@10.8.1\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:208 in .pnpm...",
+        "Array.forEach (:)",
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewVpc/RestrictDefaultSecurityGroupCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewVpcRestrictDefaultSecurityGroupCustomResourceC1289FDE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:21:17)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebTaskDefinition/TaskRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebTaskDefinitionTaskRole2EE1C0E7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new FargateTaskDefinition2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:40:28)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebTaskDefinition/ExecutionRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebTaskDefinitionExecutionRole225B46C9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LB/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLB8DF41985"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/Service/Service": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebService1A189B32"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/WebTaskDefinition/ExecutionRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebTaskDefinitionExecutionRoleDefaultPolicy5D8A2D6F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LB/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLBSecurityGroup23B3D25C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LB/SecurityGroup/to DelawareScenePreviewServicepublicPreviewWebServiceSecurityGroupBC83314F:3000": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLBSecurityGrouptoDelawareScenePreviewServicepublicPreviewWebServiceSecurityGroupBC83314F3000428D31E8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LB/PublicListener/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLBPublicListenerD950142A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/Service/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceSecurityGroupF5512BF5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:20:7)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/Service/SecurityGroup/from DelawareScenePreviewServicepublicPreviewWebServiceLBSecurityGroupB5DCB6DE:3000": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceSecurityGroupfromDelawareScenePreviewServicepublicPreviewWebServiceLBSecurityGroupB5DCB6DE3000056C1151"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewService-public/PreviewWebService/LB/PublicListener/ECSGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewWebServiceLBPublicListenerECSGroup0DD737FA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in .pnpm...",
+        "new ServiceStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\service-stack.ts:76:21)"
+      ]
+    }
+  ]
+}

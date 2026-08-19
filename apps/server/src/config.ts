@@ -71,6 +71,7 @@ function parseString(
 export function parseConfigObject(
   input: Record<string, unknown>,
   cwd = process.cwd(),
+  defaultDataDirectory = resolve(cwd, 'data/generated'),
 ): Result<AppConfig> {
   const errors: ValidationIssue[] = [];
   const allowed = new Set<string>(CONFIGURATION_KEYS);
@@ -129,7 +130,10 @@ export function parseConfigObject(
     host: stringValue('HOST', '127.0.0.1', 1, 255),
     port: bounded('PORT', 3000, 1, 65_535),
     publicOrigin,
-    dataDirectory: resolve(cwd, stringValue('DATA_DIRECTORY', 'data/generated')),
+    dataDirectory:
+      values.DATA_DIRECTORY === undefined
+        ? defaultDataDirectory
+        : resolve(cwd, stringValue('DATA_DIRECTORY', 'data/generated')),
     demoMode: demoMode.ok ? demoMode.value : true,
     rateLimitMax: bounded('RATE_LIMIT_MAX', 60, 1, 60),
     rateLimitWindowSeconds: bounded('RATE_LIMIT_WINDOW_SECONDS', 60, 1, 60),
@@ -156,16 +160,24 @@ export function parseConfigObject(
   return errors.length > 0 ? { ok: false, errors } : { ok: true, value: config };
 }
 
-export function parseConfig(env: NodeJS.ProcessEnv, cwd = process.cwd()): Result<AppConfig> {
+export function parseConfig(
+  env: NodeJS.ProcessEnv,
+  cwd = process.cwd(),
+  defaultDataDirectory = resolve(cwd, 'data/generated'),
+): Result<AppConfig> {
   const selected: Record<string, unknown> = {};
   for (const key of CONFIGURATION_KEYS) {
     if (env[key] !== undefined) selected[key] = env[key];
   }
-  return parseConfigObject(selected, cwd);
+  return parseConfigObject(selected, cwd, defaultDataDirectory);
 }
 
-export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
-  const parsed = parseConfig(env);
+export function loadConfig(
+  env: NodeJS.ProcessEnv = process.env,
+  cwd = process.cwd(),
+  defaultDataDirectory = resolve(cwd, 'data/generated'),
+): AppConfig {
+  const parsed = parseConfig(env, cwd, defaultDataDirectory);
   if (!parsed.ok) {
     throw new Error(
       `Invalid configuration:\n${parsed.errors

@@ -25,6 +25,7 @@
     "catalog:import": "tsx scripts/import-catalogs.ts --file",
     "catalog:import:all": "tsx scripts/import-catalogs.ts --all",
     "catalog:export": "tsx scripts/export-catalog.ts",
+    "events:scrape": "tsx scripts/scrape-events.ts",
     "db:migrate": "tsx scripts/migrate.ts",
     "seed": "tsx scripts/seed-demo.ts",
     "cleanroom:validate": "tsx scripts/validate-clean-room.ts",

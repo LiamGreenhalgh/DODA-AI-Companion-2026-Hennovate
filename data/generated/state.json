@@ -2,361 +2,2431 @@
   "schemaVersion": 1,
   "events": [
     {
-      "id": "11111111-1111-4111-8111-111111111111",
-      "canonicalIdentity": "a8f48cea0ce128ac730e4e4bb83aaac574a9f49e17f8d0a548ac7ecab9647503",
+      "id": "be27dce1-88e9-53b1-aa91-97558e0e53de",
+      "canonicalIdentity": "238c462cda346308289a67d28b097504fcfeb1db90565ce359e32e208a773608",
       "identityVersion": 1,
-      "title": "Delaware Art Day",
-      "description": "Meet Delaware artists and explore independently created demonstrations and exhibitions.",
+      "title": "Riverfront Summer Lunch Time Music Series with An'Letreece",
+      "description": "Join Riverfront Wilmington for free live music at Hare Overlook Pavilion during the Lunchtime Music series featuring An’Letreece. An’Letreece is an award-winning singer, songwriter, and entertainer from Wilmington, Delaware, with more than 17 years of professional performance experience. Known for her powerful voice, soulful sound, and engaging stage presence. Additionally, she has performed throughout the region at concerts, celebrations, corporate events, and community gatherings. A longtime lead vocalist for Delaware’s premier cover band, Best Kept Soul, An’Letreece is also an accomplished independent recording artist with original music available on streaming platforms. Through Letreece Music LLC, she continues to create memorable live entertainment experiences while supporting and inspiring artists in her community.",
       "categories": [
-        "Visual Arts"
+        "Riverfront Summer"
       ],
-      "organization": "First State Arts Collective",
-      "venue": "The Community Gallery",
-      "city": "Dover",
-      "region": "Central Delaware",
-      "cost": "Free",
-      "audience": "All ages",
-      "accessibility": "Wheelchair accessible",
-      "address": {
-        "street": "100 Example Avenue",
-        "city": "Dover",
-        "state": "DE",
-        "postalCode": "19901"
-      },
-      "coordinates": {
-        "latitude": 39.1582,
-        "longitude": -75.5244
-      },
-      "onlineLocationUrl": null,
-      "publicSourceUrl": "https://example.org/delaware-art-day",
-      "ticketUrl": null,
-      "registrationUrl": null,
-      "attribution": "Independent demonstration data",
-      "rightsNotice": null,
-      "sourceCategory": "ddoa-grantee",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-art-1",
-          "kind": "date",
-          "startDate": "2027-01-16",
-          "endDate": null,
-          "originalStart": "2027-01-16",
-          "originalEnd": null
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-art",
-          "sourceUrl": "https://example.org/delaware-art-day",
-          "sourceSuppliedId": "demo-art-1",
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "22222222-2222-4222-8222-222222222222",
-      "canonicalIdentity": "96a44c264c51373c7f220bcdaa7d75a387d496d29614c5938db695c10f331e3e",
-      "identityVersion": 1,
-      "title": "Riverfront Jazz Evening",
-      "description": "An evening program featuring regional jazz performers.",
-      "categories": [
-        "Music"
-      ],
-      "organization": "Wilmington Community Music Project",
-      "venue": "Riverfront Performance Hall",
-      "city": "Wilmington",
-      "region": "Northern Delaware",
-      "cost": "$20",
-      "audience": "Adults and teens",
-      "accessibility": "Assistive listening available",
-      "address": null,
-      "coordinates": null,
-      "onlineLocationUrl": null,
-      "publicSourceUrl": "https://example.org/riverfront-jazz",
-      "ticketUrl": "https://example.org/riverfront-jazz/tickets",
-      "registrationUrl": null,
-      "attribution": null,
-      "rightsNotice": null,
-      "sourceCategory": "non-grantee",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-music-1",
-          "kind": "instant",
-          "startAt": "2027-02-21T00:30:00Z",
-          "endAt": "2027-02-21T02:30:00Z",
-          "sourceTimezone": "America/New_York",
-          "localDate": "2027-02-20",
-          "localTime": "19:30:00",
-          "originalStart": "2027-02-20T19:30:00-05:00",
-          "originalEnd": "2027-02-20T21:30:00-05:00"
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-music",
-          "sourceUrl": "https://example.org/riverfront-jazz",
-          "sourceSuppliedId": "demo-music-1",
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "33333333-3333-4333-8333-333333333333",
-      "canonicalIdentity": "27e4e0bcd7fae84b88246a929a5060248676e586dba027e2801929af9b7a1a4e",
-      "identityVersion": 1,
-      "title": "Coastal Stage: New Delaware Voices",
-      "description": "A staged reading of new work by local playwrights.",
-      "categories": [
-        "Theatre"
-      ],
-      "organization": "Coastal Stage Ensemble",
-      "venue": "Seaside Studio",
-      "city": "Rehoboth Beach",
-      "region": "Southern Delaware",
-      "cost": "Pay what you can",
-      "audience": "Adults and teens",
-      "accessibility": "Step-free entrance",
-      "address": null,
-      "coordinates": null,
-      "onlineLocationUrl": null,
-      "publicSourceUrl": null,
-      "ticketUrl": null,
-      "registrationUrl": "https://example.org/coastal-stage/register",
-      "attribution": null,
-      "rightsNotice": null,
-      "sourceCategory": "ddoa-grantee",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-theatre-1",
-          "kind": "instant",
-          "startAt": "2027-03-12T23:00:00Z",
-          "endAt": "2027-03-13T01:00:00Z",
-          "sourceTimezone": "America/New_York",
-          "localDate": "2027-03-12",
-          "localTime": "18:00:00",
-          "originalStart": "2027-03-12T18:00:00-05:00",
-          "originalEnd": "2027-03-12T20:00:00-05:00"
-        },
-        {
-          "id": "occ-theatre-2",
-          "kind": "instant",
-          "startAt": "2027-03-13T19:00:00Z",
-          "endAt": "2027-03-13T21:00:00Z",
-          "sourceTimezone": "America/New_York",
-          "localDate": "2027-03-13",
-          "localTime": "14:00:00",
-          "originalStart": "2027-03-13T14:00:00-05:00",
-          "originalEnd": "2027-03-13T16:00:00-05:00"
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-theatre",
-          "sourceUrl": "https://example.org/coastal-stage",
-          "sourceSuppliedId": null,
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "44444444-4444-4444-8444-444444444444",
-      "canonicalIdentity": "81f628e38095f64f2b2cf7fee14f72afa617364dc5adbc05c44527315756e076",
-      "identityVersion": 1,
-      "title": "Hands-on Delaware History Workshop",
-      "description": "A family workshop using replica objects to explore Delaware history.",
-      "categories": [
-        "History"
-      ],
-      "organization": "Delaware Heritage Demonstration Program",
-      "venue": "Old Town Learning Center",
-      "city": "New Castle",
-      "region": "Northern Delaware",
-      "cost": "Free",
-      "audience": "Families",
-      "accessibility": "Wheelchair accessible",
-      "address": null,
-      "coordinates": null,
-      "onlineLocationUrl": null,
-      "publicSourceUrl": null,
-      "ticketUrl": null,
-      "registrationUrl": null,
-      "attribution": null,
-      "rightsNotice": null,
-      "sourceCategory": "government",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-history-1",
-          "kind": "date",
-          "startDate": "2027-04-10",
-          "endDate": null,
-          "originalStart": "2027-04-10",
-          "originalEnd": null
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-history",
-          "sourceUrl": "https://example.org/history-workshop",
-          "sourceSuppliedId": null,
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "55555555-5555-4555-8555-555555555555",
-      "canonicalIdentity": "9fc4c5f9f4ab656e2efc3dda3025cd673a0bb9a64056e5217c191e9a0e68fea6",
-      "identityVersion": 1,
-      "title": "Spring Dance Showcase",
-      "description": "Student and community companies share short works in multiple dance styles.",
-      "categories": [
-        "Dance"
-      ],
-      "organization": "Newark Movement Lab",
-      "venue": "Main Street Arts Center",
-      "city": "Newark",
-      "region": "Northern Delaware",
-      "cost": "$12",
-      "audience": "All ages",
-      "accessibility": "Wheelchair accessible",
-      "address": null,
-      "coordinates": null,
-      "onlineLocationUrl": null,
-      "publicSourceUrl": null,
-      "ticketUrl": null,
-      "registrationUrl": null,
-      "attribution": null,
-      "rightsNotice": null,
-      "sourceCategory": "ddoa-grantee",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-dance-1",
-          "kind": "instant",
-          "startAt": "2027-05-08T19:00:00Z",
-          "endAt": "2027-05-08T21:00:00Z",
-          "sourceTimezone": "America/New_York",
-          "localDate": "2027-05-08",
-          "localTime": "15:00:00",
-          "originalStart": "2027-05-08T15:00:00-04:00",
-          "originalEnd": "2027-05-08T17:00:00-04:00"
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-dance",
-          "sourceUrl": "https://example.org/spring-dance",
-          "sourceSuppliedId": null,
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "66666666-6666-4666-8666-666666666666",
-      "canonicalIdentity": "38718d5d263625e8bbe860f4261824736f9634a4c869ef114e9994c98c25323a",
-      "identityVersion": 1,
-      "title": "Poetry Open Mic",
-      "description": "A welcoming reading for Delaware poets and listeners.",
-      "categories": [
-        "Literary Arts"
-      ],
-      "organization": "Sussex County Reading Circle",
-      "venue": "Community Reading Room",
-      "city": "Georgetown",
-      "region": "Southern Delaware",
-      "cost": "Free",
-      "audience": "Adults and teens",
-      "accessibility": "Step-free entrance",
-      "address": null,
-      "coordinates": null,
-      "onlineLocationUrl": null,
-      "publicSourceUrl": null,
-      "ticketUrl": null,
-      "registrationUrl": null,
-      "attribution": null,
-      "rightsNotice": null,
-      "sourceCategory": "library",
-      "publicationStatus": "published",
-      "occurrences": [
-        {
-          "id": "occ-poetry-1",
-          "kind": "instant",
-          "startAt": "2027-06-17T22:30:00Z",
-          "endAt": "2027-06-18T00:00:00Z",
-          "sourceTimezone": "America/New_York",
-          "localDate": "2027-06-17",
-          "localTime": "18:30:00",
-          "originalStart": "2027-06-17T18:30:00-04:00",
-          "originalEnd": "2027-06-17T20:00:00-04:00"
-        }
-      ],
-      "validationIssues": [],
-      "provenance": [
-        {
-          "sourceRecordId": "demo-source-literary",
-          "sourceUrl": "https://example.org/poetry-open-mic",
-          "sourceSuppliedId": null,
-          "retrievedAt": "2026-08-18T12:00:00Z"
-        }
-      ],
-      "version": 1
-    },
-    {
-      "id": "77777777-7777-4777-8777-777777777777",
-      "canonicalIdentity": "ba20b69e555678c0eee9b099076829d056855987a0e5896270a430699cddb372",
-      "identityVersion": 1,
-      "title": "Pending Community Performance",
-      "description": "This fixture is visible only in moderation until approved.",
-      "categories": [
-        "Performance"
-      ],
-      "organization": "Demo Presenter",
-      "venue": "Demo Hall",
-      "city": "Milford",
-      "region": "Central Delaware",
-      "cost": "Free",
-      "audience": "All ages",
+      "organization": "Riverfront Wilmington",
+      "venue": "Hare Overlook Pavilion",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
       "accessibility": null,
       "address": null,
       "coordinates": null,
       "onlineLocationUrl": null,
-      "publicSourceUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/riverfront-summer-lunch-time-music-series-2-2-2-2-2-2-2-2-2/",
       "ticketUrl": null,
       "registrationUrl": null,
       "attribution": null,
       "rightsNotice": null,
       "sourceCategory": "non-grantee",
-      "publicationStatus": "pending",
+      "publicationStatus": "published",
       "occurrences": [
         {
-          "id": "occ-pending-1",
-          "kind": "date",
-          "startDate": "2027-07-22",
-          "endDate": null,
-          "originalStart": "2027-07-22",
-          "originalEnd": null
+          "id": "fe428a8e-bfc2-5d7c-8775-ad84d099dfc8",
+          "kind": "instant",
+          "startAt": "2026-08-19T16:15:00Z",
+          "endAt": "2026-08-19T17:15:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-08-19",
+          "localTime": "12:15:00",
+          "originalStart": "2026-08-19T12:15:00",
+          "originalEnd": "2026-08-19T13:15:00"
         }
       ],
       "validationIssues": [],
       "provenance": [
         {
-          "sourceRecordId": "demo-source-pending",
-          "sourceUrl": "https://example.org/pending-event",
-          "sourceSuppliedId": null,
-          "retrievedAt": "2026-08-18T12:00:00Z"
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/week/?ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/week/?outlook-ical=1",
+          "sourceSuppliedId": "10001373-1787141700-1787145300@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "37ff375a-4511-5c19-9342-dbf09f5e9a2f",
+      "canonicalIdentity": "b5bc9707ae5675780fd8f5820ecb34f44802e27b267f638ecd5aa17278234764",
+      "identityVersion": 1,
+      "title": "3rd Thursday Showcase: Michael Jenkins",
+      "description": "Michael Jenkins returns to Theatre N's 3rd Thursday Showcase by popular demand! Held on the third Thursday of every month, this live music series...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Theatre N",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "221 W Tenth St 221 W Tenth St",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19801"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/3rd-thursday-showcase%3a-michael-jenkins/92967/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "9431f9dd-0890-5a91-9e76-bfe04766e8ac",
+          "kind": "date",
+          "startDate": "2026-08-20",
+          "endDate": "2026-08-20",
+          "originalStart": "2026-08-20",
+          "originalEnd": "2026-08-20"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/3rd-thursday-showcase%3a-michael-jenkins/92967/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/3rd-thursday-showcase%3a-michael-jenkins/92967/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "d492c886-a736-5261-bbb8-fb5c2ad92e73",
+      "canonicalIdentity": "b7b452abb6043b9ccb29f71fce7d96d20d2877a5088c946a84f1765c99f5bd1e",
+      "identityVersion": 1,
+      "title": "Athletic Transformation: The Intersection of Culture, Art, and Sport",
+      "description": "Like artists, athletes change how we see the world. They push boundaries, inspire us, and build local culture. So what happens when competition,...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Biggs Museum of American Art",
+      "city": "Dover",
+      "region": "Central Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "406 Federal St.",
+        "city": "Dover",
+        "state": "DE",
+        "postalCode": "19901"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/athletic-transformation%3a-the-intersection-of-culture-art-and-sport/93012/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "604b1760-3f57-5dfd-af51-da87c1ffddeb",
+          "kind": "date",
+          "startDate": "2026-08-20",
+          "endDate": "2026-08-20",
+          "originalStart": "2026-08-20",
+          "originalEnd": "2026-08-20"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/athletic-transformation%3a-the-intersection-of-culture-art-and-sport/93012/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/athletic-transformation%3a-the-intersection-of-culture-art-and-sport/93012/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "fd79966a-a6da-539c-84f0-417ea652e8b7",
+      "canonicalIdentity": "7ecfab594d0f262af5368187b7899713459ac1583c29509a5ef2c9770e5e66b7",
+      "identityVersion": 1,
+      "title": "Almost Queen: A Tribute to Queen",
+      "description": "They don't just pay tribute to the legendary band, Almost Queen transports you back in time to experience the magic and essence of Queen themselves....",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/almost-queen%3a-a-tribute-to-queen/92807/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "adaeefba-0625-514b-8b34-88ec99b65cb1",
+          "kind": "date",
+          "startDate": "2026-08-21",
+          "endDate": "2026-08-21",
+          "originalStart": "2026-08-21",
+          "originalEnd": "2026-08-21"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/almost-queen%3a-a-tribute-to-queen/92807/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/almost-queen%3a-a-tribute-to-queen/92807/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "366d28df-29a1-5f04-b17c-0ebd76295202",
+      "canonicalIdentity": "6de79a0938560210d1877f544cd29e486577fab8b4e48c87ed0a6189b792f754",
+      "identityVersion": 1,
+      "title": "Back to the Future Event!",
+      "description": "Join us for Trivia, Themed Cocktails, and a Costume Contest! Cocktails at 5:30 PM, Event at 6:00 PM, Film at 7:00 PM Great Scott! Travel back to 1985...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Theatre N",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "221 W Tenth St 221 W Tenth St",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19801"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/back-to-the-future-event!/92969/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "52a229f1-d34c-5f42-99fe-dcad4cc753c5",
+          "kind": "date",
+          "startDate": "2026-08-22",
+          "endDate": "2026-08-22",
+          "originalStart": "2026-08-22",
+          "originalEnd": "2026-08-22"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/back-to-the-future-event!/92969/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/back-to-the-future-event!/92969/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "21ea37e1-8a7a-53a5-9c68-e0e3ac1e6b51",
+      "canonicalIdentity": "574266b58fa08878e9a905ddb676af88111b827f026d2c1f14e28a6df2406e55",
+      "identityVersion": 1,
+      "title": "Canoe Trip Down the Brandywine",
+      "description": "Join certified guides on a canoeing adventure down the Brandywine and see the Brandywine Valley from a whole new perspective! Adults must accompany...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Brandywine Creek State Park",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "41 Adams Dam Rd.",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19807"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/canoe-trip-down-the-brandywine/92707/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "b2ee4c4c-e96b-5fcb-a5d1-009799e2a1fc",
+          "kind": "date",
+          "startDate": "2026-08-22",
+          "endDate": "2026-08-22",
+          "originalStart": "2026-08-22",
+          "originalEnd": "2026-08-22"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/canoe-trip-down-the-brandywine/92707/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/canoe-trip-down-the-brandywine/92707/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "5ef6a898-94de-5d56-ba4d-5811d1272966",
+      "canonicalIdentity": "2d9f9ee1d777b114cf0150be887d3de0c3bb82989cf02697d4af49ccef89b0ab",
+      "identityVersion": 1,
+      "title": "Creating Whimsical Masterpieces with John Donato",
+      "description": "Renowned local artist John Donato will delight children in this guided art class. Your child will enjoy hands-on learning from the artist himself as...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/creating-whimsical-masterpieces-with-john-donato/92808/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "bb00324e-2d93-52dc-af66-92120dcce2b2",
+          "kind": "date",
+          "startDate": "2026-08-22",
+          "endDate": "2026-08-22",
+          "originalStart": "2026-08-22",
+          "originalEnd": "2026-08-22"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/creating-whimsical-masterpieces-with-john-donato/92808/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/creating-whimsical-masterpieces-with-john-donato/92808/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "2ec2f5bd-7544-5b66-b2c1-ebb3c925f819",
+      "canonicalIdentity": "4403e4a1133f75ac2717f0af02621a01f15d65e607daf3786297e738238e4927",
+      "identityVersion": 1,
+      "title": "Allman Brothers “At Fillmore East”",
+      "description": "The Allman Brothers Band At Fillmore East wasn’t just a live album — it was the moment the Allman Brothers Band became eternal. Captured over two...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/allman-brothers-%e2%80%9cat-fillmore-east%e2%80%9d/92810/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "72ab2881-b102-5a76-a146-12588c9af83e",
+          "kind": "date",
+          "startDate": "2026-08-25",
+          "endDate": "2026-08-25",
+          "originalStart": "2026-08-25",
+          "originalEnd": "2026-08-25"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/allman-brothers-%e2%80%9cat-fillmore-east%e2%80%9d/92810/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/allman-brothers-%e2%80%9cat-fillmore-east%e2%80%9d/92810/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "224fcbb7-4fcd-5df8-8da9-262611b9b9d5",
+      "canonicalIdentity": "accff891e349c73546248ab9c23ff5a0312ad26b4ad78a73cbfed9ffe6fcb5d2",
+      "identityVersion": 1,
+      "title": "Chapel Street Concert Series: Tater Patch",
+      "description": "Join us for a concert of old-time music with Tater Patch! Tater Patch is an old-time country string band based in Delaware with more than 30 years of...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Chapel Street Players",
+      "city": "Newark",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "643 Creek View Road",
+        "city": "Newark",
+        "state": "DE",
+        "postalCode": "19711"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tater-patch/92403/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "15898df5-5b3d-5a62-8f24-b2f6b5dfee35",
+          "kind": "date",
+          "startDate": "2026-08-25",
+          "endDate": "2026-08-25",
+          "originalStart": "2026-08-25",
+          "originalEnd": "2026-08-25"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tater-patch/92403/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tater-patch/92403/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "8e98e0c1-3bd2-5b40-81e9-d3456b07538a",
+      "canonicalIdentity": "efbc6826af157255ffe0fcd6e6837885f352fd0032a18b4861eb6bcccd2a63e1",
+      "identityVersion": 1,
+      "title": "Riverfront Summer Lunch Time Music Series with Emily Moses McNatt",
+      "description": "Join Riverfront Wilmington for free live music at Hare Overlook Pavilion during the final Lunch Time Music performance of the summer series. Emily Moses McNatt returns to the Riverfront with acoustic indie originals and pop covers from the 90s through today. Her soothing vocals and upbeat coffeehouse style make her a great fit to close out the summer music lineup in Wilmington, DE.",
+      "categories": [
+        "Riverfront Summer"
+      ],
+      "organization": "Riverfront Wilmington",
+      "venue": "Hare Overlook Pavilion",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/riverfront-summer-lunch-time-music-series-2-2-2-2-2-2-2-2-2-2/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "24edcf14-dcbf-5d02-8d11-8dbf13d164ec",
+          "kind": "instant",
+          "startAt": "2026-08-26T16:15:00Z",
+          "endAt": "2026-08-26T17:15:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-08-26",
+          "localTime": "12:15:00",
+          "originalStart": "2026-08-26T12:15:00",
+          "originalEnd": "2026-08-26T13:15:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001374-1787746500-1787750100@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001374-1787746500-1787750100@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001374-1787746500-1787750100@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001374-1787746500-1787750100@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "1c558099-f0e0-52eb-9253-80e3e755a1c5",
+      "canonicalIdentity": "55c3d951327e67017d8061fce2861758b161779a4258d507c2b3ac0990713a51",
+      "identityVersion": 1,
+      "title": "Branden & James",
+      "description": "“BRANDEN JAMES, AN OPERATIC TENOR AND JAMES CLARK, A VIRTUOSO OF THE CELLO, SIMPLY MAKE BEAUTIFUL MUSIC TOGETHER” – THEATER PIZZAZ About Branden...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Milton Theatre",
+      "city": "Milton",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "110 Union St",
+        "city": "Milton",
+        "state": "DE",
+        "postalCode": "19968"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/branden-%26-james/92730/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "7e1c685d-c824-5ae4-804d-a809649cbff7",
+          "kind": "date",
+          "startDate": "2026-08-29",
+          "endDate": "2026-08-29",
+          "originalStart": "2026-08-29",
+          "originalEnd": "2026-08-29"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/branden-%26-james/92730/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/branden-%26-james/92730/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "6fe296ef-3730-5276-bf60-05a669f12589",
+      "canonicalIdentity": "bc5b6e0eee6555261b02f944827dd7c003a31ba7f7cf372834b6f58baf959beb",
+      "identityVersion": 1,
+      "title": "August Chef's Table at Loblolly",
+      "description": "Join us for an unforgettable evening of food, wine, and rustic charm at our intimate Chef’s Table dinner on the farm Guests will be served in front of...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Loblolly Acres",
+      "city": "Woodside",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "3893 Turkey Point Rd",
+        "city": "Woodside",
+        "state": "DE",
+        "postalCode": "19980"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/august-chefs-table-at-loblolly/92134/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "322899a6-963c-5975-b88e-1acf3ed25afe",
+          "kind": "date",
+          "startDate": "2026-08-30",
+          "endDate": "2026-08-30",
+          "originalStart": "2026-08-30",
+          "originalEnd": "2026-08-30"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/august-chefs-table-at-loblolly/92134/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/august-chefs-table-at-loblolly/92134/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "82671253-960d-5dfe-a536-7f105d5b972e",
+      "canonicalIdentity": "efbb94e03a9da9bd1d9cc09462cf7624580567dd83d320e6642ce7f4dfb75e70",
+      "identityVersion": 1,
+      "title": "Beginnings: A Celebration of the Music of Chicago – MATINEE",
+      "description": "About Beginnings Website | Facebook | Instagram | Twitter | Youtube Beginnings formed in 2002 as a tribute to the music of super-group Chicago. The...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "110 Union St. Milton, DE 19968",
+      "city": "Milton",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "110 Union St.",
+        "city": "Milton",
+        "state": "DE",
+        "postalCode": "19968"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/beginnings%3a-a-celebration-of-the-music-of-chicago-%26%238211%3b-matinee/92600/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "4c1dbb3d-eb68-5163-9af6-d7b3ddb265d6",
+          "kind": "date",
+          "startDate": "2026-08-30",
+          "endDate": "2026-08-30",
+          "originalStart": "2026-08-30",
+          "originalEnd": "2026-08-30"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/beginnings%3a-a-celebration-of-the-music-of-chicago-%26%238211%3b-matinee/92600/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/beginnings%3a-a-celebration-of-the-music-of-chicago-%26%238211%3b-matinee/92600/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "ebdbc82c-6abd-58d0-9df4-d733125cfe0b",
+      "canonicalIdentity": "ef7d6be61443cfe28b0cf96cf355dc893e0b12302b417893b9da4325118233c4",
+      "identityVersion": 1,
+      "title": "Collective Soul",
+      "description": "Hailing from Atlanta, GA, Collective Soul celebrated their 30th Anniversary in 2024 with the release of their highly anticipated and critically...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/collective-soul/92889/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "dac7f4aa-c5c6-5299-a424-6bf5f76ee6c6",
+          "kind": "date",
+          "startDate": "2026-08-30",
+          "endDate": "2026-08-30",
+          "originalStart": "2026-08-30",
+          "originalEnd": "2026-08-30"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/collective-soul/92889/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/collective-soul/92889/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "be1824bc-aa54-536a-836d-f42913d65ffc",
+      "canonicalIdentity": "53df368a11ed0a2a41b8e72aad7ec2e4c7de33bc7804a83d2685840e7291ac31",
+      "identityVersion": 1,
+      "title": "Back to School Fun with Little Farm Petting Zoo",
+      "description": "Celebrate the end of summer with an afternoon of family fun on the Riverfront! Little Farm Petting Zoo returns on Sunday, August 30 from 3 PM to 6 PM for a special Back to School event. Families can meet and feed friendly farm animals, enjoy free face painting, and take advantage of discounts on ice cream and water ice during the event. The petting zoo will be located between Riverwalk Mini Golf and the Delaware Children’s Museum, making it easy to spend the afternoon exploring everything the Riverfront has to offer. Bring the family and join us for one more day of summer fun before heading back to school!",
+      "categories": [],
+      "organization": "Riverfront Wilmington",
+      "venue": "Riverwalk Mini Golf",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/back-to-school-fun-with-little-farm-petting-zoo/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "64d5b677-b313-576e-9fef-54fdccd02f20",
+          "kind": "instant",
+          "startAt": "2026-08-30T19:00:00Z",
+          "endAt": "2026-08-30T22:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-08-30",
+          "localTime": "15:00:00",
+          "originalStart": "2026-08-30T15:00:00",
+          "originalEnd": "2026-08-30T18:00:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001380-1788102000-1788112800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001380-1788102000-1788112800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001380-1788102000-1788112800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001380-1788102000-1788112800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "4a72b88a-0134-5360-aa08-317cc2bd9aa3",
+      "canonicalIdentity": "0f104927c84cd63e55f507a06baf3518363880caed4ab3b827ea839387b90d1f",
+      "identityVersion": 1,
+      "title": "Beach Clean-Up at Big Chill Beach Club",
+      "description": "Help us keep our Delaware beaches clean with a beach cleanup at South Side! For an hour we will be cleaning the beach by disposing of any trash that...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Big Chill Beach Club",
+      "city": "Bethany Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "27099 Coastal Highway",
+        "city": "Bethany Beach",
+        "state": "DE",
+        "postalCode": "19930"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92293/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "9ee1e612-7186-515a-ba87-d99dc78ee5d7",
+          "kind": "date",
+          "startDate": "2026-08-31",
+          "endDate": "2026-08-31",
+          "originalStart": "2026-08-31",
+          "originalEnd": "2026-08-31"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92293/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92293/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "d951541e-195a-5810-ae8b-85d3c81b3666",
+      "canonicalIdentity": "e1e4c56a665cec72ddead0224ad48680a47f4f3e4a434bea34fab01382cd2ea9",
+      "identityVersion": 1,
+      "title": "The 23rd Annual Judged & Juried Show",
+      "description": "[bt_bb_section layout=\"boxed_1200\" lazy_load=\"yes\" show_video_on_mobile=\"\"][bt_bb_row][bt_bb_column order=\"0\" lazy_load=\"yes\" shape=\"inherit\" width=\"1/1\" width_lg=\"1/1\" width_md=\"1/1\" width_sm=\"1/1\" width_xs=\"1/1\"][bt_bb_text]The 23rd Annual Judged & Juried ShowThe 23rd Annual Judged & Juried Show runs September 1 thru October 17.Opening Reception is Friday, September 4th from 5:00 pm to 6:30 p.m.This show is Open to All.Entry forms and fees due Tuesday, August 25th.Drop off for Artwork August 29, 3-5pm or August 30, 11am-1pmPlease be sure to upload all your images with your last name and title of artwork as your file name if you are providing them.Be sure to read the requirements and print ID tags for artwork prior to drop-off. They can be found here.[/bt_bb_text][bt_bb_separator top_spacing=\"normal\" bottom_spacing=\"normal\" border_style=\"solid\" border_width=\"\" responsive=\"\" publish_datetime=\"\" expiry_datetime=\"\" animation=\"no_animation\" el_id=\"\" el_class=\"\" el_style=\"\"][/bt_bb_separator][bt_bb_text][gravityform id=\"363\" title=\"true\"] [/bt_bb_text][bt_bb_separator top_spacing=\"normal\" bottom_spacing=\"normal\" border_style=\"solid\" border_width=\"\" responsive=\"\" publish_datetime=\"\" expiry_datetime=\"\" animation=\"no_animation\" el_id=\"\" el_class=\"\" el_style=\"\"][/bt_bb_separator][/bt_bb_column][/bt_bb_row][/bt_bb_section]",
+      "categories": [
+        "Exhibits"
+      ],
+      "organization": "Mispillion Art League Inc",
+      "venue": "Mispillion Art League, 5 N. Walnut St, Milford, DE, 19963, United States",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://mispillionarts.org/events/the-23rd-annual-judged-juried-show/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "ddoa-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "22b3b4bb-a59c-57c3-b758-9f85d7de6d38",
+          "kind": "instant",
+          "startAt": "2026-09-01T04:00:00Z",
+          "endAt": "2026-10-18T03:59:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-09-01",
+          "localTime": "00:00:00",
+          "originalStart": "2026-09-01T00:00:00",
+          "originalEnd": "2026-10-17T23:59:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "46fcff83-0739-51b6-a9eb-06974cde1df6",
+          "sourceUrl": "https://mispillionarts.org/events/the-23rd-annual-judged-juried-show/ical/",
+          "sourceSuppliedId": "572@mispillionarts.org",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "7ed1933c-2f2a-5927-9ce8-95c997cfeb58",
+      "canonicalIdentity": "cfe9ed651764015398045ffc76c18476edf35759561061e81622d7aff9068224",
+      "identityVersion": 1,
+      "title": "Amish Outlaws",
+      "description": "Featured as a “Top Entertainment Pick” in New York Magazine’s 2012 “In a very short time, this band has captured the hearts, minds, and butter...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "110 Union St. Milton, DE 19968",
+      "city": "Milton",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "110 Union St.",
+        "city": "Milton",
+        "state": "DE",
+        "postalCode": "19968"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/amish-outlaws/92602/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "12fef096-97bf-56db-994f-0f55a785571c",
+          "kind": "date",
+          "startDate": "2026-09-02",
+          "endDate": "2026-09-02",
+          "originalStart": "2026-09-02",
+          "originalEnd": "2026-09-02"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/amish-outlaws/92602/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/amish-outlaws/92602/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "f6aa5edc-545c-558c-be42-0c9b237f296d",
+      "canonicalIdentity": "20fec7a1b1bcbb2c1bb58a6ed632669a79ed09a2f1234d5f6b3ef41dff2fbd94",
+      "identityVersion": 1,
+      "title": "ADRENALIZE: The Ultimate Def Leppard Experience",
+      "description": "STEP INSIDE, WALK THIS WAY …and behold the multi media spectacle of sight and sound that is ADRENALIZE – The Ultimate Def Leppard Experience!...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "110 Union St. Milton, DE 19968",
+      "city": "Milton",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "110 Union St.",
+        "city": "Milton",
+        "state": "DE",
+        "postalCode": "19968"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/adrenalize%3a-the-ultimate-def-leppard-experience/92604/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "2f09ddcf-0444-535b-bf02-bad26d07ab7a",
+          "kind": "date",
+          "startDate": "2026-09-04",
+          "endDate": "2026-09-04",
+          "originalStart": "2026-09-04",
+          "originalEnd": "2026-09-04"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/adrenalize%3a-the-ultimate-def-leppard-experience/92604/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/adrenalize%3a-the-ultimate-def-leppard-experience/92604/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "163e700c-d490-5a3f-ad8b-cbb61ca76ab9",
+      "canonicalIdentity": "7a2e8ebab64f88ff6e4e03e7d03d7047e216a1c5d3d3ac6e1bc935287728a5dc",
+      "identityVersion": 1,
+      "title": "Art Is Tasty",
+      "description": "Join us on the first Friday of each month for a guided group discussion of a work of art, then keep the conversation going while enjoying a discounted...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Delaware Art Museum",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "2301 Kentmere Pkwy.",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19806"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/art-is-tasty/93031/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "c9c3df34-ee0e-5b2d-b0af-12c0adb30927",
+          "kind": "date",
+          "startDate": "2026-09-04",
+          "endDate": "2026-09-04",
+          "originalStart": "2026-09-04",
+          "originalEnd": "2026-09-04"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/art-is-tasty/93031/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/art-is-tasty/93031/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "2f0b69a0-a40b-5f2a-a360-2768967e12f4",
+      "canonicalIdentity": "1cb0460650c6ffe91d7fb4daae74c716a07418598e60243a4f364d96de66881d",
+      "identityVersion": 1,
+      "title": "Bethany Beach - Founders Day",
+      "description": "The weekend is being designed to showcase the pride, patriotism and traditions that define Bethany Beach, including the return of the Independence Day...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Town of Bethany Beach",
+      "city": "Bethany Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "214 Garfield Parkway",
+        "city": "Bethany Beach",
+        "state": "DE",
+        "postalCode": "19930"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/bethany-beach-founders-day/93020/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "efa83625-b21c-5993-bd26-c02d1cc44a07",
+          "kind": "date",
+          "startDate": "2026-09-04",
+          "endDate": "2026-09-07",
+          "originalStart": "2026-09-04",
+          "originalEnd": "2026-09-07"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/bethany-beach-founders-day/93020/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/bethany-beach-founders-day/93020/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "b81c4b8e-a5fe-53af-ab94-2e7c178d26d2",
+      "canonicalIdentity": "b86836f4903afd62940d7bcae4d74f293cdbd6061d4f0e4ce67a2a969606db8b",
+      "identityVersion": 1,
+      "title": "Dance Workshop with Renee Wight: Basic Intro to Jazz 1",
+      "description": "Join local dance instructor Renee Wight for a fun and accessible series of dance workshops! Across four lively classes, Renee will introduce...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-1/92894/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "550505d1-87a3-5237-90cb-b2b3e29d8300",
+          "kind": "date",
+          "startDate": "2026-09-08",
+          "endDate": "2026-09-08",
+          "originalStart": "2026-09-08",
+          "originalEnd": "2026-09-08"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-1/92894/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-1/92894/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "9e0d06c9-8955-5660-81c0-d0843c224799",
+      "canonicalIdentity": "b4d2458178a5d07debbcc63b28a4ac3cb971ab5cfe3b4e125750f97794af4a4e",
+      "identityVersion": 1,
+      "title": "Clay Cauldron",
+      "description": "A festive, magical clay workshop for adults, where imagination gathers into form and something enchanted begins to rise beneath the hands. Sculpt a...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "New Castle County Art Studio",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "310 Kiamensi Road",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19804"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/clay-cauldron/92862/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "81410a64-33d6-57a3-a1b9-535d93bf5958",
+          "kind": "date",
+          "startDate": "2026-09-09",
+          "endDate": "2026-09-09",
+          "originalStart": "2026-09-09",
+          "originalEnd": "2026-09-09"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/clay-cauldron/92862/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/clay-cauldron/92862/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "db44238f-8ac6-5987-bbd7-767513945589",
+      "canonicalIdentity": "447beba0beb1a9fc21417e653837970760d38466d1a100aa55eb2e957143aff4",
+      "identityVersion": 1,
+      "title": "48th Annual Bethany Beach Boardwalk Arts Festival",
+      "description": "The 48th Annual Bethany Beach Boardwalk Arts Festival will take place on Saturday, September 12th from 10:00 a.m. to 4:00 p.m. The popular one-day...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Bethany Beach Boardwalk, DE",
+      "city": "Bethany Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "Bethany Beach Boardwalk",
+        "city": "Bethany Beach",
+        "state": "DE",
+        "postalCode": "19930"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/48th-annual-bethany-beach-boardwalk-arts-festival/92606/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "4a70458d-dd75-5c9f-8969-f2b4c3c61dc1",
+          "kind": "date",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-12",
+          "originalStart": "2026-09-12",
+          "originalEnd": "2026-09-12"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/48th-annual-bethany-beach-boardwalk-arts-festival/92606/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/48th-annual-bethany-beach-boardwalk-arts-festival/92606/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "213e0d80-56e7-5df5-a58e-4b320e56ac78",
+      "canonicalIdentity": "23073bffd0c7cbd8591dc2fdae3110718fa81f2cfa63eb73b737c35bec491834",
+      "identityVersion": 1,
+      "title": "48th Annual Nanticoke Indian Powwow",
+      "description": "Come celebrate Indigenous culture with traditional dance, music, arts and crafts, food vendors, and kids' art activities! In partnership with the...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Hutson Fields - Nanticoke Indian Center",
+      "city": "Millsboro",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "30045 Eagle Crest Road",
+        "city": "Millsboro",
+        "state": "DE",
+        "postalCode": "19968"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/48th-annual-nanticoke-indian-powwow/91800/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "69c96f01-334c-5c55-ada5-46dc484997ed",
+          "kind": "date",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-13",
+          "originalStart": "2026-09-12",
+          "originalEnd": "2026-09-13"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/48th-annual-nanticoke-indian-powwow/91800/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/48th-annual-nanticoke-indian-powwow/91800/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "9f066038-5ce6-58f8-a309-a80b4924e4d4",
+      "canonicalIdentity": "0623d7fda900092b36f7962620cfdf17eda96cedd939b06d4abdff69672e4a33",
+      "identityVersion": 1,
+      "title": "Brandywine Festival of the Arts",
+      "description": "The Brandywine Festival of the Arts is an annual arts festival in Wilmington, Delaware. Featuring hundreds of juried artists exhibiting one-of-a-kind...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Brandywine Park",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "1080 N. Park Drive",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19802"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/brandywine-festival-of-the-arts/91811/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "6a5c77db-3028-5dfe-baf4-cb1d34d4abb6",
+          "kind": "date",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-13",
+          "originalStart": "2026-09-12",
+          "originalEnd": "2026-09-13"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/brandywine-festival-of-the-arts/91811/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/brandywine-festival-of-the-arts/91811/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "016afa3e-87e3-5fc6-a650-9c85af9e9ede",
+      "canonicalIdentity": "fcf86ac4453323ea31f867c995e3accb09b006f4909605fc6b79b3b332ff7e3d",
+      "identityVersion": 1,
+      "title": "Chapel Street Concert Series: Tony Cimorosi Jazz Trio",
+      "description": "Join us for an afternoon of jazz with bassist Tony Cimorosi and his trio! Tony Cimorosi has been on the NYC World Beat, Rock, R&B, Jazz and...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Chapel Street Players",
+      "city": "Newark",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "643 Creek View Road",
+        "city": "Newark",
+        "state": "DE",
+        "postalCode": "19711"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tony-cimorosi-jazz-trio/92955/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "8a36c799-3738-5833-8cdd-8744844d24ff",
+          "kind": "date",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-12",
+          "originalStart": "2026-09-12",
+          "originalEnd": "2026-09-12"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tony-cimorosi-jazz-trio/92955/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/chapel-street-concert-series%3a-tony-cimorosi-jazz-trio/92955/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "45d10010-fb61-5632-ae07-5fe590507dad",
+      "canonicalIdentity": "b6770995d16832deba0b3cd7bdadca695293874beab760576baec7bdaa95fabc",
+      "identityVersion": 1,
+      "title": "3rd Annual Ballet Brews BBQ & Blue",
+      "description": "Delaware’s professional ballet company, the First State Ballet Theatre will grace our Sycamore Stage for the sixth time later this summer. An audience...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Loblolly Acres",
+      "city": "Woodside",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "3893 Turkey Point Rd",
+        "city": "Woodside",
+        "state": "DE",
+        "postalCode": "19980"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/3rd-annual-ballet-brews-bbq-%26-blue/92148/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "787cb6c7-6342-5419-9d42-b9610032a2f8",
+          "kind": "date",
+          "startDate": "2026-09-13",
+          "endDate": "2026-09-13",
+          "originalStart": "2026-09-13",
+          "originalEnd": "2026-09-13"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/3rd-annual-ballet-brews-bbq-%26-blue/92148/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/3rd-annual-ballet-brews-bbq-%26-blue/92148/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "43abbedb-31a2-5050-9283-5968f4cf8f8f",
+      "canonicalIdentity": "a5a90facc8c938a32bbfac575b3fa74f505b6de97fc5a236d8e07db133cdeb15",
+      "identityVersion": 1,
+      "title": "Beach Clean-Up at Big Chill beach Club",
+      "description": "Help us keep our Delaware beaches clean with a beach cleanup at South Side! For an hour we will be cleaning the beach by disposing of any trash that...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Big Chill Beach Club",
+      "city": "Bethany Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "27099 Coastal Highway",
+        "city": "Bethany Beach",
+        "state": "DE",
+        "postalCode": "19930"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92294/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "08f0d7fd-53b7-5041-b104-4613fe3ad042",
+          "kind": "date",
+          "startDate": "2026-09-14",
+          "endDate": "2026-09-14",
+          "originalStart": "2026-09-14",
+          "originalEnd": "2026-09-14"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92294/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92294/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "02e82481-3011-5f1b-a332-de53349a6056",
+      "canonicalIdentity": "7c76c7629867a288f9f6ee94e79f4a5e4d593334f5df75ac08c2cb6135876a5b",
+      "identityVersion": 1,
+      "title": "BREW AT THE ZOO",
+      "description": "Lively After-Hours Fundraiser with Live Band at the Brandywine Zoo! Get together with friends at this outdoor fun event in the zoo; includes a variety...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Brandywine Zoo",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "1001 N. Park Dr.",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19802"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/brew-at-the-zoo/92461/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "47e19c66-718d-57cd-baa5-e617492d4b46",
+          "kind": "date",
+          "startDate": "2026-09-18",
+          "endDate": "2026-09-18",
+          "originalStart": "2026-09-18",
+          "originalEnd": "2026-09-18"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/brew-at-the-zoo/92461/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/brew-at-the-zoo/92461/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "d8780894-f54e-5d49-a4f9-646b9ae94fe8",
+      "canonicalIdentity": "dc2ea30c4112a83d91922101dfc745319e150eba4319208d87873a4966dcdfa1",
+      "identityVersion": 1,
+      "title": "100th Anniversary Harbor of Refuge Lighthouse Cruise",
+      "description": "Celebrate a century of history on this special Birthday Fundraiser Cruise honoring the iconic Harbor of Refuge Lighthouse. Cape Water Tours the...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Harbor of Refuge Light Station",
+      "city": "Lewes",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "N/A",
+        "city": "Lewes",
+        "state": "DE",
+        "postalCode": "19958"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/100th-anniversary-harbor-of-refuge-lighthouse-cruise/92630/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "716d30b3-25bb-5920-a1fb-933a2879493d",
+          "kind": "date",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-19",
+          "originalStart": "2026-09-19",
+          "originalEnd": "2026-09-19"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/100th-anniversary-harbor-of-refuge-lighthouse-cruise/92630/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/100th-anniversary-harbor-of-refuge-lighthouse-cruise/92630/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "f6b5cd10-14b5-5418-9145-fffdbe226b69",
+      "canonicalIdentity": "f6a830caae274c625ff45b3e03df0cae4d61be23767186cbca3814fd3565e664",
+      "identityVersion": 1,
+      "title": "Ballet in Bloom: First State Ballet Theatre at Winterthur",
+      "description": "Experience ballet in a fresh way in this dazzling mixed-repertory performance featuring excerpts from beloved classical ballets alongside contemporary...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Winterthur Museum, Garden & Library",
+      "city": "Winterthur",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "5105 Kennett Pike",
+        "city": "Winterthur",
+        "state": "DE",
+        "postalCode": "19735"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/ballet-in-bloom%3a-first-state-ballet-theatre-at-winterthur/92456/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "0d7d1dad-ad5b-5f03-a2d0-71e5476ee26f",
+          "kind": "date",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-19",
+          "originalStart": "2026-09-19",
+          "originalEnd": "2026-09-19"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/ballet-in-bloom%3a-first-state-ballet-theatre-at-winterthur/92456/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/ballet-in-bloom%3a-first-state-ballet-theatre-at-winterthur/92456/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "fdb30fb2-86be-575a-a477-14478b7438f2",
+      "canonicalIdentity": "33c323b95855cb00e578d2ad0036278ade2735cf463f854c96a7a2aa21e9e4bb",
+      "identityVersion": 1,
+      "title": "Broadway in the Park",
+      "description": "The spotlight is coming to Lewes! Broadway stands alongside jazz as one of the few performing art forms born entirely in the United States. Broadway...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Lewes Canalfront Park",
+      "city": "Lewes",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "211 Front Street",
+        "city": "Lewes",
+        "state": "DE",
+        "postalCode": "19958"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/broadway-in-the-park/92947/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "d01d999c-ca6a-5df5-9c0f-5eea4f7f9014",
+          "kind": "date",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-19",
+          "originalStart": "2026-09-19",
+          "originalEnd": "2026-09-19"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/broadway-in-the-park/92947/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/broadway-in-the-park/92947/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "10909ed8-2ae3-5be6-bcb7-7026e2ca13f0",
+      "canonicalIdentity": "0d96c785ed5ee9c55ac5156cf5f3e351f9ea25134d2e747864e7f7030341470d",
+      "identityVersion": 1,
+      "title": "Music at the Market | September 19, 2026",
+      "description": "Ease into the fall season at the Riverfront Market on September 19, 2026, from 12:00 PM to 2:00 PM with live music by saxophonist Vernon James Jr. Enjoy a late-morning performance as you shop, dine, and experience the energy of the Market. It’s the perfect way to spend a fall weekend at Riverfront Wilmington.",
+      "categories": [],
+      "organization": "Riverfront Wilmington",
+      "venue": "Riverfront Market, 3 S Orange St., Wilmington, DE, 19801, United States",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/music-at-the-market-september-19-2026/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "2d6c5653-fa61-5bef-8a04-8c88641764d1",
+          "kind": "instant",
+          "startAt": "2026-09-19T16:00:00Z",
+          "endAt": "2026-09-19T18:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-09-19",
+          "localTime": "12:00:00",
+          "originalStart": "2026-09-19T12:00:00",
+          "originalEnd": "2026-09-19T14:00:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001354-1789819200-1789826400@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001354-1789819200-1789826400@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001354-1789819200-1789826400@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001354-1789819200-1789826400@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "f58947eb-bb10-558e-a7a8-8f960818bc41",
+      "canonicalIdentity": "7e70594c01a3e81eae35a5d4c88315a5302cb8a88c49b4dd9b145dcbc679a416",
+      "identityVersion": 1,
+      "title": "Little Farm Petting Zoo at Riverfront Wilmington",
+      "description": "Celebrate the season at Riverfront Wilmington with The Little Farm Petting Zoo on September 19, 2026, from 3:00 PM to 6:00 PM. Families can enjoy a free afternoon filled with hands-on animal encounters and family-friendly fun along the Riverwalk. Located between Riverwalk Mini Golf and the Delaware Children’s Museum, the petting zoo offers the perfect opportunity to explore the Riverfront and enjoy nearby attractions after your visit.",
+      "categories": [
+        "30th Year Riverfront Anniversary"
+      ],
+      "organization": "Riverfront Wilmington",
+      "venue": "Riverwalk Mini Golf",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/little-farm-petting-zoo-at-riverfront-wilmington-4/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "7c2a49d0-04ee-51d9-8c98-17e0301f0a89",
+          "kind": "instant",
+          "startAt": "2026-09-19T19:00:00Z",
+          "endAt": "2026-09-19T22:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-09-19",
+          "localTime": "15:00:00",
+          "originalStart": "2026-09-19T15:00:00",
+          "originalEnd": "2026-09-19T18:00:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001363-1789830000-1789840800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001363-1789830000-1789840800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001363-1789830000-1789840800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001363-1789830000-1789840800@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "8a4f2f36-3646-5369-ac8b-02149bd6d2be",
+      "canonicalIdentity": "ed30af4b0c3e1b5a0fcc296700f7839ca546f5a2250152646336d03900f0dd0e",
+      "identityVersion": 1,
+      "title": "Dance Workshop with Renee Wight: Basic Intro to Jazz 2",
+      "description": "Join local dance instructor Renee Wight for a fun and accessible series of dance workshops! Across four lively classes, Renee will introduce...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-2/92905/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "4301aad5-7a7b-59de-ad59-de738ba2b8a0",
+          "kind": "date",
+          "startDate": "2026-09-23",
+          "endDate": "2026-09-23",
+          "originalStart": "2026-09-23",
+          "originalEnd": "2026-09-23"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-2/92905/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-jazz-2/92905/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "f8222489-cb33-5d0d-870a-81151146f7ed",
+      "canonicalIdentity": "5e06c1f27b8a315489aa8813021cb646330894cafb5426357fa4afa0733a7401",
+      "identityVersion": 1,
+      "title": "A Taste of Coverdale",
+      "description": "Celebrate nature through the food and landscapes of Coverdale Farm Preserve. Enjoy an evening of thoughtfully prepared, locally grown food and...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Coverdale Farm Preserve",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "543 Way Rd.",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19807"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/a-taste-of-coverdale/92718/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "e86ac07c-498a-5e42-900c-bf1caa02a2c7",
+          "kind": "date",
+          "startDate": "2026-09-24",
+          "endDate": "2026-09-24",
+          "originalStart": "2026-09-24",
+          "originalEnd": "2026-09-24"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/a-taste-of-coverdale/92718/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/a-taste-of-coverdale/92718/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "85ced025-f8ad-54c4-b4d3-ad4b08d706a0",
+      "canonicalIdentity": "48a715cdb4d2b1840dabc51f07ceeb42b1e2b58ec36de0972afa534805df3f39",
+      "identityVersion": 1,
+      "title": "100 Years of Broadway presented by CAMP Rehoboth Chorus",
+      "description": "\"Another Op'nin, Another Show!\" The CAMP Rehoboth Chorus presents \"100 Years of Broadway,\" a celebration of Broadway's 100th anniversary, Sept. 25 -...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Camp Rehoboth",
+      "city": "Rehoboth Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "37 Baltimore Avenue",
+        "city": "Rehoboth Beach",
+        "state": "DE",
+        "postalCode": "19971"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/100-years-of-broadway-presented-by-camp-rehoboth-chorus/93001/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "b2d6192b-4d4e-51fe-a1f2-f40bce6f9654",
+          "kind": "date",
+          "startDate": "2026-09-25",
+          "endDate": "2026-09-25",
+          "originalStart": "2026-09-25",
+          "originalEnd": "2026-09-25"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/100-years-of-broadway-presented-by-camp-rehoboth-chorus/93001/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/100-years-of-broadway-presented-by-camp-rehoboth-chorus/93001/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "f6dd63fa-5d46-5244-9a04-49d1f3be6b71",
+      "canonicalIdentity": "d6598dd73fea280f06403a67dbd8dbcef52f6b6829e6e96181d1f2391d2251ac",
+      "identityVersion": 1,
+      "title": "A Tribute to Taylor Simon King: 3 American Troubadours",
+      "description": "How Sweet It Is, Country Road, Shower The People, Anticipation, You're So Vain Mockingbird, I Feel the Earth Move, It's Too Late, and You've Got A...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "The Grand Opera House",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "818 North Market Street",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19801"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/a-tribute-to-taylor-simon-king%3a-3-american-troubadours/92858/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "0b27c26c-ace2-5cc1-a814-37c4a840d6ba",
+          "kind": "date",
+          "startDate": "2026-09-26",
+          "endDate": "2026-09-26",
+          "originalStart": "2026-09-26",
+          "originalEnd": "2026-09-26"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/a-tribute-to-taylor-simon-king%3a-3-american-troubadours/92858/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/a-tribute-to-taylor-simon-king%3a-3-american-troubadours/92858/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "ca2c497e-772b-518b-9f07-b556fa16cd40",
+      "canonicalIdentity": "e84a89802c3f80180022d542eecd22762384263e721c69461a5e259d19cef77e",
+      "identityVersion": 1,
+      "title": "Beach Clean-Up at Big Chill Beach Club",
+      "description": "Help us keep our Delaware beaches clean with a beach cleanup at South Side! For an hour we will be cleaning the beach by disposing of any trash that...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Big Chill Beach Club",
+      "city": "Bethany Beach",
+      "region": "Southern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "27099 Coastal Highway",
+        "city": "Bethany Beach",
+        "state": "DE",
+        "postalCode": "19930"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92295/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "44281781-2522-5c8c-a0ce-876532b53e20",
+          "kind": "date",
+          "startDate": "2026-09-28",
+          "endDate": "2026-09-28",
+          "originalStart": "2026-09-28",
+          "originalEnd": "2026-09-28"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92295/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/beach-clean-up-at-big-chill-beach-club/92295/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "d80146c0-02b8-5a52-b2df-33f4399fb047",
+      "canonicalIdentity": "76b998417b738da2b667612fe1b629afc76449a410511abb83d696e832e238b9",
+      "identityVersion": 1,
+      "title": "5Ft Stained Glass Moon Phase Suncatcher",
+      "description": "Transform your living space with a statement piece that defies standard dimensions! In this fun creative workshop, you will design and execute a...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "New Castle County Art Studio",
+      "city": "Wilmington",
+      "region": "Northern Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "310 Kiamensi Road",
+        "city": "Wilmington",
+        "state": "DE",
+        "postalCode": "19804"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/5ft-stained-glass-moon-phase-suncatcher/92935/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "19ed2aeb-1b3e-52ec-829e-32d1bccdb8b1",
+          "kind": "date",
+          "startDate": "2026-09-30",
+          "endDate": "2026-09-30",
+          "originalStart": "2026-09-30",
+          "originalEnd": "2026-09-30"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/5ft-stained-glass-moon-phase-suncatcher/92935/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/5ft-stained-glass-moon-phase-suncatcher/92935/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "9fd177bc-a806-5be0-978d-2697ee55815b",
+      "canonicalIdentity": "e9f7ada4fe22f25326c86f997e2e2ac67629a2f0bc4209b09993cae55451e8d1",
+      "identityVersion": 1,
+      "title": "Dance Workshop with Renee Wight: Basic Intro to Line Dancing",
+      "description": "Join local dance instructor Renee Wight for a fun and accessible series of dance workshops! Across four lively classes, Renee will introduce...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Freeman Arts Pavilion",
+      "city": "Selbyville",
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "31806 Lake View Drive",
+        "city": "Selbyville",
+        "state": "DE",
+        "postalCode": "19975"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-line-dancing/92906/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "d0e39604-9564-5567-9097-a8d81a090414",
+          "kind": "date",
+          "startDate": "2026-09-30",
+          "endDate": "2026-09-30",
+          "originalStart": "2026-09-30",
+          "originalEnd": "2026-09-30"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-line-dancing/92906/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/dance-workshop-with-renee-wight%3a-basic-intro-to-line-dancing/92906/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "2a794586-c6c3-5df2-8f5c-b00ef1dac6a8",
+      "canonicalIdentity": "2aafc32b06736b44163dcc516f5f1218efd26c9c4ce53f6f10ac53d0b878b6ac",
+      "identityVersion": 1,
+      "title": "Bike MS: Bike to the Bay (Delaware) 2026",
+      "description": "Bike MS: Bike to the Bay is a one-day cycling event that brings together hundreds of riders, volunteers, sponsors, and supporters to raise critical...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Delaware Technical Community College: Dover Campus",
+      "city": "Dover",
+      "region": "Central Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "100 Campus Dr",
+        "city": "Dover",
+        "state": "DE",
+        "postalCode": "19901"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/bike-ms%3a-bike-to-the-bay-(delaware)-2026/92719/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "69d06dc8-26a5-51f3-b2aa-45b22bfcea6b",
+          "kind": "date",
+          "startDate": "2026-10-03",
+          "endDate": "2026-10-03",
+          "originalStart": "2026-10-03",
+          "originalEnd": "2026-10-03"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/bike-ms%3a-bike-to-the-bay-(delaware)-2026/92719/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/bike-ms%3a-bike-to-the-bay-(delaware)-2026/92719/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "c0cc026f-4d0a-5806-af74-385070f89bc8",
+      "canonicalIdentity": "3475da97b8d1dbf293dd6e4a1bad90913a6de7ae8add28a6e61fde2709bf65aa",
+      "identityVersion": 1,
+      "title": "39th Annual Amish Country Bike Tour",
+      "description": "39th Annual Amish Country Bike Tour Also known as \"the ride for pie\" this is one of the region's favorite cycling events known for its unique...",
+      "categories": [],
+      "organization": "Visit Delaware",
+      "venue": "Legislative Mall",
+      "city": "Dover",
+      "region": "Central Delaware",
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": {
+        "street": "411 Legislative Ave.",
+        "city": "Dover",
+        "state": "DE",
+        "postalCode": "19901"
+      },
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://www.visitdelaware.com/event/39th-annual-amish-country-bike-tour/91810/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "20e0492a-8db6-5df4-965d-a295e4d261a4",
+          "kind": "date",
+          "startDate": "2026-10-10",
+          "endDate": "2026-10-10",
+          "originalStart": "2026-10-10",
+          "originalEnd": "2026-10-10"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "cc4c80c4-c0fd-5ebb-893d-86fa25128bb1",
+          "sourceUrl": "https://www.visitdelaware.com/event/39th-annual-amish-country-bike-tour/91810/",
+          "sourceSuppliedId": "https://www.visitdelaware.com/event/39th-annual-amish-country-bike-tour/91810/",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "e1e63964-91a9-5664-a494-87270a54d53c",
+      "canonicalIdentity": "267be5f6abb4f3cd6da7457981e051fb70d9e8fc46c56e2d6ba137cf89464a4d",
+      "identityVersion": 1,
+      "title": "Music at the Market | October 17, 2026",
+      "description": "Celebrate the season at the Riverfront Market on October 17, 2026, from 11:00 AM to 1:00 PM with live music by saxophonist Vernon James Jr. Enjoy a lively late-morning performance while you shop, dine, and take in the fall atmosphere at the Market. It’s a great way to spend your weekend at Riverfront Wilmington.",
+      "categories": [],
+      "organization": "Riverfront Wilmington",
+      "venue": "Riverfront Market, 3 S Orange St., Wilmington, DE, 19801, United States",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/music-at-the-market-october-17-2026/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "8d367ac2-59b4-5223-8b69-00470ad35311",
+          "kind": "instant",
+          "startAt": "2026-10-17T15:00:00Z",
+          "endAt": "2026-10-17T17:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-10-17",
+          "localTime": "11:00:00",
+          "originalStart": "2026-10-17T11:00:00",
+          "originalEnd": "2026-10-17T13:00:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001355-1792234800-1792242000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001355-1792234800-1792242000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001355-1792234800-1792242000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001355-1792234800-1792242000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "c040f754-d3f3-5870-ba36-ee754fec37a5",
+      "canonicalIdentity": "a358febd88201d38966df284582a9d986d09790baeb2c4ead743d12c785e9f09",
+      "identityVersion": 1,
+      "title": "Music at the Market | November 21, 2026",
+      "description": "Kick off the holiday season at the Riverfront Market on November 21, 2026, from 11:00 AM to 1:00 PM with live music by saxophonist Vernon James Jr. Enjoy a lively late-morning performance as you shop, dine, and experience the energy of the Market. It’s the perfect way to spend a festive weekend at Riverfront Wilmington.",
+      "categories": [],
+      "organization": "Riverfront Wilmington",
+      "venue": "Riverfront Market, 3 S Orange St., Wilmington, DE, 19801, United States",
+      "city": null,
+      "region": null,
+      "cost": null,
+      "audience": null,
+      "accessibility": null,
+      "address": null,
+      "coordinates": null,
+      "onlineLocationUrl": null,
+      "publicSourceUrl": "https://riverfrontwilm.com/event/music-at-the-market-november-21-2026/",
+      "ticketUrl": null,
+      "registrationUrl": null,
+      "attribution": null,
+      "rightsNotice": null,
+      "sourceCategory": "non-grantee",
+      "publicationStatus": "published",
+      "occurrences": [
+        {
+          "id": "0052da31-2a4a-5d42-aaac-2d91f74ba7c0",
+          "kind": "instant",
+          "startAt": "2026-11-21T16:00:00Z",
+          "endAt": "2026-11-21T18:00:00Z",
+          "sourceTimezone": "America/New_York",
+          "localDate": "2026-11-21",
+          "localTime": "11:00:00",
+          "originalStart": "2026-11-21T11:00:00",
+          "originalEnd": "2026-11-21T13:00:00"
+        }
+      ],
+      "validationIssues": [],
+      "provenance": [
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?ical=1",
+          "sourceSuppliedId": "10001356-1795258800-1795266000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/photo/?outlook-ical=1",
+          "sourceSuppliedId": "10001356-1795258800-1795266000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?ical=1",
+          "sourceSuppliedId": "10001356-1795258800-1795266000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
+        },
+        {
+          "sourceRecordId": "1da84f13-86be-5419-bec7-6bc0558696de",
+          "sourceUrl": "https://riverfrontwilm.com/events/list/?outlook-ical=1",
+          "sourceSuppliedId": "10001356-1795258800-1795266000@riverfrontwilm.com",
+          "retrievedAt": "2026-08-19T06:39:40.631Z"
         }
       ],
       "version": 1
@@ -2852,6 +4922,23 @@
       "collectionState": "enabled"
     }
   ],
-  "audits": [],
-  "updatedAt": "2026-08-18T17:32:59.717Z"
+  "audits": [
+    {
+      "id": "0f60ea25-4fb9-48dc-9b6b-288773cf4c93",
+      "editorIdentity": "demo-editor",
+      "action": "archive",
+      "targetId": "66666666-6666-4666-8666-666666666666",
+      "actionTimestamp": "2026-08-18T19:08:59.959139959Z",
+      "reason": null
+    },
+    {
+      "id": "23268814-8000-470e-b0ba-8474c94c8b5a",
+      "editorIdentity": "demo-editor",
+      "action": "archive",
+      "targetId": "55555555-5555-4555-8555-555555555555",
+      "actionTimestamp": "2026-08-18T20:54:27.925467925Z",
+      "reason": null
+    }
+  ],
+  "updatedAt": "2026-08-19T06:52:54.075Z"
 }

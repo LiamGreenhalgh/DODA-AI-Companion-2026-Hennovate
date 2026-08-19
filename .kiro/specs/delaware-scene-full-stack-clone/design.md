@@ -4,9 +4,11 @@
 
 ### Purpose
 
-This design defines an implementable, clean-room, full-stack reimplementation of the publicly observable DelawareScene event-discovery service. It covers the public website, a versioned backend API, authoritative CSV source import, bounded and policy-aware event ingestion, moderation, submissions, authentication, persistence, operations, automated validation, local development, containerization, and an AWS ECS-ready infrastructure definition.
+This design defines an implementable, clean-room, full-stack reimplementation of the publicly observable DelawareScene event-discovery service. It covers the public website, a versioned backend API, authoritative CSV source import, bounded and policy-aware event ingestion, moderation, submissions, authentication, persistence, operations, automated validation, local development, containerization, and an AWS CDK v2 deployment architecture for ECS Fargate.
 
 The implementation is not a source-code or private-backend clone. It reproduces only behavior supported by the original request, the four authoritative source catalogs, publicly observable behavior, and independently documented design decisions. Unknown private behavior is either omitted or explicitly classified as an independent approximation in the clean-room ledger.
+
+This revision records an explicit deployment decision to use AWS CDK v2 and ECS Fargate with the local default AWS credential chain. It designs, but does not execute, AWS mutations. Account ID, Region, DNS zone, hostname, certificate, environment name, capacity, and budget remain unresolved deployment inputs; the deployment workflow must discover or collect them, display the resolved values, and stop for review before bootstrap or application deployment.
 
 ### Design goals
 
@@ -15,17 +17,19 @@ The implementation is not a source-code or private-backend clone. It reproduces 
 3. Preserve source provenance and moderation history transactionally.
 4. Treat ingestion as untrusted, bounded, policy-aware work; never assume permission to crawl.
 5. Serve an accessible, responsive, same-origin web application and documented `/api/v1` interface.
-6. Remain deployable to ECS Fargate without introducing Kubernetes or mutating AWS during design and local validation.
-7. Make every externally observable approximation traceable in a machine-validated clean-room ledger.
+6. Deploy the reviewed immutable release to ECS Fargate through CDK v2 only after caller identity, account, Region, bootstrap state, synthesized templates, and the final stack diff are verified.
+7. Protect RDS data, secrets, retained logs, backup artifacts, and rollback images against accidental stack deletion or replacement.
+8. Make every externally observable approximation traceable in a machine-validated clean-room ledger.
 
 ### Non-goals and explicit limits
 
 - Recovering or representing inaccessible DelawareScene source code, database schemas, credentials, private data, ranking rules, or proprietary backend behavior.
 - Reusing logos, photographs, fonts, copy, or other protected assets without documented permission.
 - Running an unrestricted general-purpose crawler. Only enabled catalog records, bounded public URLs, supported formats, and allowed paths are evaluated.
-- Mutating AWS resources during specification or ordinary local development.
-- Introducing EKS. No requirement needs Kubernetes-specific scheduling, custom controllers, or multi-cluster operation; ECS Fargate is the lower-operational-cost fit.
-- Providing legal, copyright, or security certification. The system records permission bases and test evidence so DDOA can perform the relevant reviews.
+- Performing any AWS mutation merely by synthesizing, testing, or opening this design. Bootstrap, image publication, migration execution, and stack deployment are separate reviewed actions.
+- Introducing EKS. The explicit runtime decision is ECS Fargate; no requirement needs Kubernetes-specific scheduling, custom controllers, or multi-cluster operation.
+- Guessing or hard-coding the target AWS account, Region, hosted zone, hostname, certificate, sizing, or budget.
+- Providing legal, copyright, security, or AWS cost certification. The system records permission bases, validation evidence, and a pre-deployment cost inventory so DDOA can perform the relevant reviews.
 
 ### Pragmatic implementation profile
 
@@ -43,7 +47,7 @@ The implementation is not a source-code or private-backend clone. It reproduces 
 | Property tests | Vitest + fast-check | TypeScript-native generated testing with a global minimum of 100 runs. |
 | Browser/accessibility tests | Playwright + axe-core | Keyboard, URL restoration, reflow, form errors, and automated accessibility checks in real browser engines. |
 | Packaging | Multi-stage OCI image; web and worker use different commands | One immutable artifact to validate, scan, and run in Compose or ECS. |
-| Prospective AWS runtime | CDK v2 definition for ECS Fargate, ALB, RDS PostgreSQL, Secrets Manager, CloudWatch | Container-native deployment without Kubernetes administration. Synthesis and template diff remain local-only until an explicit deployment decision. |
+| AWS runtime | AWS CDK v2; ECS Fargate, ALB, RDS PostgreSQL, ECR, Secrets Manager, CloudWatch, and Route 53/ACM inputs | Explicit deployment decision; lower operational overhead than EKS, with environment-aware protections and a reviewed-diff gate before mutation. |
 
 Package manifests will pin exact versions and `pnpm-lock.yaml` will be committed. Major versions above are architectural constraints; implementation selects currently supported exact patch versions and updates them only through reviewed dependency changes.
 
@@ -51,7 +55,13 @@ Package manifests will pin exact versions and `pnpm-lock.yaml` will be committed
 
 - [Fastify's support policy](https://fastify.dev/docs/latest/Reference/LTS/) lists Fastify 5 support for Node.js 20 and 22, supporting Node.js 22 as the common runtime.
 - [AWS ECS on Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html) runs isolated container tasks without operating EC2 clusters and supports Application Load Balancers, matching the desired low-operations deployment.
-- [`cdk synth`](https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-synth.html) creates a local cloud assembly and CloudFormation templates. This enables offline synthesis plus a repository-owned manifest diff without applying resources.
+- [CDK credential configuration](https://docs.aws.amazon.com/cdk/v2/guide/configure-access.html) follows AWS CLI credential precedence and uses the default profile when no profile is supplied. The deployment wrapper intentionally passes no profile and verifies the resulting caller identity before any mutation.
+- [CDK environment bootstrapping](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping-env.html) is required per account and Region, creates deployment support resources, and supports termination protection for the bootstrap stack. Bootstrap is therefore a separately reviewed mutation, not a hidden deploy prerequisite.
+- [`cdk synth`](https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-synth.html) creates the cloud assembly, while [`cdk diff`](https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-diff.html) can use a read-only CloudFormation change set for accurate replacement information. The final reviewed diff is bound by digest to the subsequent deploy.
+- [Amazon ECS deployment circuit breaker](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-circuit-breaker.html) can fail and automatically roll back a service deployment that cannot reach steady state; both web and worker services enable it.
+- [Amazon ECR tag immutability](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html) prevents release tags from being overwritten. Runtime task definitions use the verified image digest rather than a mutable tag.
+- [Amazon RDS deletion behavior](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html) makes deletion protection and retained backups/final snapshots explicit safeguards. The data stack adds CloudFormation termination protection and retention/update-replacement policies as separate defenses.
+- [Secrets Manager deletion behavior](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html) normally provides a recovery window when deletion is explicitly requested. Application secrets are additionally retained when removed from a stack.
 - [PostgreSQL transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html) provide all-or-nothing visibility and rollback, which is used for event/provenance writes, catalog replacement, moderation, and audit records.
 - [RFC 4180](https://www.rfc-editor.org/rfc/rfc4180.html) provides the quoted-field, escaped-quote, record, and line-ending basis for catalog parsing.
 - [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html) defines robots exclusion matching. The retrieval policy evaluates it before source requests and fails closed on explicit prohibitions.
@@ -72,7 +82,7 @@ The design is complete for all requirements, but implementation should preserve 
 4. **Operations:** local editor bootstrap, sessions/CSRF/RBAC, moderation transitions, revisions/audits, ingestion controls, source freshness and alerts.
 5. **Submissions:** organization, event, correction, and opportunity forms and moderation queues.
 6. **Hardening:** accessibility, property/contract/E2E/performance/security tests, backup/restore, clean-room ledger enforcement, container scan.
-7. **Deployment readiness:** local-only CDK synthesis and manifest diff for ECS Fargate; no deploy is performed.
+7. **AWS deployment:** resolve and approve the target environment, bootstrap if required, create the retained registry/data foundations, publish a scanned immutable image, run the reviewed migration, and deploy/verify the ECS services from the final reviewed CDK diff.
 
 ## Architecture
 
@@ -115,24 +125,39 @@ flowchart TB
       LWorker --> LDB
     end
 
-    subgraph AWS[Prospective AWS deployment - not applied]
-      ALB[Application Load Balancer\nHTTPS]
-      ECSWeb[ECS Fargate service\nweb command]
-      ECSWorker[ECS Fargate service\nworker command]
-      RDS[(RDS PostgreSQL)]
+    subgraph AWS[Approved target account and Region]
+      DNS[Route 53 record\nor external DNS]
+      ACM[ACM certificate]
+      ALB[Public ALB\nHTTPS only]
+      ECR[(Private ECR\nimmutable release images)]
+      ECSWeb[ECS Fargate web service\nprivate application subnets]
+      ECSWorker[ECS Fargate worker service\nprivate application subnets]
+      Migration[One-off migration task]
+      RDS[(RDS PostgreSQL\nisolated data subnets)]
       SM[Secrets Manager]
-      CW[CloudWatch logs/metrics]
+      CW[CloudWatch logs, metrics, alarms]
+      NAT[Controlled NAT egress\nfor public event sources]
+
+      DNS --> ALB
+      ACM --> ALB
       ALB --> ECSWeb
+      ECR --> ECSWeb
+      ECR --> ECSWorker
+      ECR --> Migration
       ECSWeb --> RDS
       ECSWorker --> RDS
+      Migration --> RDS
       SM --> ECSWeb
       SM --> ECSWorker
+      SM --> Migration
       ECSWeb --> CW
       ECSWorker --> CW
+      Migration --> CW
+      ECSWorker --> NAT
     end
 ```
 
-The same immutable image is run with `node dist/apps/server/main.js` for HTTP traffic and `node dist/apps/worker/main.js` for queued work. The web process never performs long ingestion inline. The worker can be scaled separately while PostgreSQL job claiming and per-source advisory locks prevent duplicate concurrent work.
+The same immutable image is run with `node dist/apps/server/main.js` for HTTP traffic and `node dist/apps/worker/main.js` for queued work. The web process never performs long ingestion inline. The worker can be scaled separately while PostgreSQL job claiming and per-source advisory locks prevent duplicate concurrent work. ECS task definitions reference an ECR image digest; a release tag is descriptive and immutable but is not the deployment identity.
 
 ### Repository layout
 
@@ -157,7 +182,7 @@ The same immutable image is run with `node dist/apps/server/main.js` for HTTP tr
 │  ├─ assets.yaml          # permission/substitution inventory
 │  └─ schemas/             # JSON schemas enforced in CI
 ├─ data/source-catalogs/   # exact supplied CSV files copied by setup/import task
-├─ infra/cdk/              # ECS-ready CDK app; no lookup and no deploy by default
+├─ infra/cdk/              # Environment-bound CDK v2 app and guarded deployment tooling
 ├─ scripts/                # import, seed, backup, restore, infra diff, release checks
 ├─ tests/                  # contract, integration, E2E, a11y, performance fixtures
 ├─ Dockerfile
@@ -483,25 +508,202 @@ The multi-stage Dockerfile:
 
 The image is tagged by an immutable `1..128` character version formed from release version plus full or unambiguous source revision. The release manifest binds image digest, source revision, lockfile hash, migration set, test report, and scan report.
 
-### AWS infrastructure dry-run design
+### AWS CDK deployment design
 
-`infra/cdk` defines, but does not deploy:
+#### Deployment decision and requirements reconciliation
 
-- VPC and public/private subnet boundaries without environment lookups;
-- internet-facing HTTPS ALB and security groups;
-- ECS cluster and Fargate web/worker task definitions;
-- configurable whole-number min/max scaling `1..100`, with `min <= max`;
-- RDS PostgreSQL connectivity and backup settings;
-- Secrets Manager references, not secret values;
-- CloudWatch log groups, health checks, metrics/alarms, and alert destination reference;
-- immutable image URI/digest input and release metadata;
-- external DNS/certificate, source egress, and alert-channel inputs.
+The user's explicit instruction establishes the deployment runtime and toolchain: AWS CDK v2 deploying ECS Fargate through the local default AWS credential chain. This supersedes the earlier design assumption that no Deployment_Decision existed. It does **not** authorize this design-editing phase to run AWS commands, publish images, bootstrap an environment, or deploy stacks; those actions occur only during a later implementation/execution phase and only through the review gates below.
 
-The default command is `pnpm infra:validate`, which type-checks, runs CDK synthesis with validation, lints generated templates, converts them to a normalized resource manifest, and diffs that manifest against the last reviewed baseline. The diff explicitly lists additions, modifications, and deletions or says none. It requires no AWS credentials and applies nothing.
+The current `requirements.md` still states that the requirements phase authorizes no cloud mutation and names Requirement 16 “Deployment Readiness Without Cloud Mutation.” The functional clauses remain mostly compatible:
 
-No package script aliases `cdk deploy`. Validation-mode synthesis embeds an intentionally failing deployment-authorization rule, so accidentally deploying the ordinary local assembly is rejected during template preflight before resource changes. A separate future `pnpm infra:deploy --decision <path>` wrapper validates a signed deployment-decision document containing runtime `ecs`, environment, account, region, approver, expiry, allowed stacks, and rollback authorization, then creates a short-lived deploy-authorized assembly without that guard. The CDK app refuses deploy-authorized synthesis without a valid decision and decision-bound token, and the wrapper removes the temporary assembly after use. EKS constructs do not exist. Commands outside the repository remain an operator responsibility, but every project-produced assembly and supported mutating command is fail-closed without a decision.
+- Requirements 16.3 and 16.4 remain the mandatory synth/diff dry run and non-application of proposed resource changes during review.
+- Requirement 16.5 is now partially resolved with runtime `ecs`; account, Region, environment name, domain/certificate, capacity, and rollback authorization remain unresolved values.
+- Requirement 16.2 applies only while no Deployment_Decision exists, so it no longer describes the later approved deployment execution.
+- Requirements 16.12 and 16.15 still require an explicit rollback authorization and an eligible immediately preceding release.
 
-Rollback metadata records releases and health intervals. The deployment wrapper permits only the immediately preceding image whose recorded production health was continuous for at least five minutes and never runs data rollback or destructive migrations. If no release qualifies, it exits before changing service configuration.
+A follow-up requirements revision is needed to record the Deployment_Decision, default-credential-chain identity verification, bootstrap authorization, final-diff approval, and retention/termination safeguards. `tasks.md` also remains offline-only and must be updated in a later phase before implementation. This design does not silently reinterpret those files or claim that an unknown account, Region, or environment has been approved.
+
+#### Required deployment inputs
+
+A closed, non-secret environment document drives synthesis. It must contain or resolve all of the following before any stack mutation:
+
+| Input | Rule |
+|---|---|
+| `environmentName` | Stable lowercase deployment label such as `dev`, `staging`, or `prod`; no value is assumed. |
+| `expectedAccountId` | Exact 12-digit account ID copied from reviewed caller identity; never inferred and committed without review. |
+| `region` | Explicit AWS Region resolved through the default AWS configuration/provider chain and then recorded; synthesis fails if absent. |
+| `releaseVersion` / `sourceRevision` / `imageDigest` | Immutable release identity, exact source revision, and `sha256:` ECR digest. Mutable tags are not accepted by task definitions. |
+| `hostedZoneId`, `hostedZoneName`, `recordName` | Optional Route 53-owned DNS inputs. All three are required together; no hosted-zone lookup by name is performed. |
+| `certificateArn` | Optional existing ACM certificate in the target Region. If absent, DNS-validated certificate creation requires the complete Route 53 inputs. |
+| Network and capacity | VPC CIDRs, Availability Zone count, NAT strategy, task CPU/memory, desired/min/max counts, RDS class/storage/Multi-AZ, backup/log retention. Values are validated and included in the cost review. |
+| Alert destination | Reviewed SNS topic/email/webhook integration input; no placeholder external destination is deployed. |
+| Data-protection mode | Must be `protected` for production; controls termination protection, deletion protection, retention, backups, and approval policy. |
+
+Secrets are not present in this document. The document is schema-validated, environment-specific, and included by digest in the deployment plan. CDK context obtained from AWS lookups is avoided; where an existing resource is required, the exact ID/ARN is an explicit reviewed input. This keeps synthesis deterministic and prevents an unnoticed account lookup from changing a template.
+
+#### Default credential chain and environment preflight
+
+The deployment tooling passes no `--profile`, access key, secret key, account, or Region override. CDK and AWS CLI therefore use the normal default AWS credential/configuration precedence. Short-lived IAM Identity Center or assumed-role credentials are preferred; long-lived access keys are not written by the project.
+
+Before **every** bootstrap, image publication, migration, deploy, rollback, or destroy operation, the wrapper:
+
+1. resolves credentials and Region through the default provider chain;
+2. calls `aws sts get-caller-identity` and captures account ID, principal ARN, and user ID;
+3. displays principal ARN, account ID, Region, environment name, stack names, and intended action;
+4. compares the resolved account and Region with the reviewed environment document and deployment-plan digest;
+5. verifies the credential is unexpired and that the Region is enabled;
+6. refuses root-user credentials, a missing Region, an account/Region mismatch, or an unapproved action.
+
+The account/Region are never accepted merely because they are “default.” The first use must stop for the operator to copy the observed values into a reviewed environment document; subsequent uses fail closed on mismatch. No secret credential value is logged or stored.
+
+CDK bootstrap state is checked through the modern bootstrap version parameter. If absent or too old, the tool renders the bootstrap template (`cdk bootstrap --show-template`), summarizes its IAM roles, S3/ECR assets, trust, permissions boundary, and cost implications, and stops for separate approval. Only then may it run `cdk bootstrap aws://<reviewed-account>/<reviewed-region> --termination-protection` with the default credentials. Re-running bootstrap is treated as a mutation and follows the same identity and template-review gate. The bootstrap stack is never destroyed by the application workflow.
+
+#### Stack boundaries and dependency direction
+
+Stacks use stable IDs containing the reviewed environment name. Stateful constructs keep stable construct IDs; moving or renaming them is a replacement-risk change that the diff gate must highlight.
+
+| Stack | Responsibilities | Protection and dependency notes |
+|---|---|---|
+| `DelawareScene-Registry-<env>` | Dedicated private ECR repository, immutable tags, lifecycle policy, repository policy, image scan configuration | Deployed first so a release can be published. Termination protection and `RETAIN`; never coupled to service replacement. |
+| `DelawareScene-Foundation-<env>` | VPC, subnets, route tables, NAT/egress choice, VPC endpoints, base security groups | Stable networking boundary. Production uses termination protection. Exports only stable IDs consumed downstream. |
+| `DelawareScene-Data-<env>` | RDS PostgreSQL, subnet/parameter groups, runtime and migration secrets, backup artifact bucket, database alarms | Always termination-protected. Depends on Foundation; must not depend on compute/service stacks. |
+| `DelawareScene-Compute-<env>` | ECS cluster, ALB/listeners/target groups, ACM/Route 53 binding, explicit log groups, IAM roles, web/worker/migration task definitions | Depends on Foundation, Data, Registry and immutable image digest. Can be deployed before the public services; supplies the one-off migration task definition. |
+| `DelawareScene-Service-<env>` | Web and worker ECS services, service autoscaling, deployment alarms, DNS alias when managed by Route 53 | Depends on Compute. Kept separate so migrations can finish before a new application revision starts. |
+
+Cross-stack references flow only in that order. Outputs are limited to stable ARNs/IDs and do not form cycles. Refactors first weaken/remove consumers before deleting exports; construct moves or logical-ID overrides receive a dedicated replacement review. Environment stacks are never deployed with `--all` from an unreviewed shell command; the guarded wrapper supplies the explicit ordered stack list.
+
+#### Networking, ingress, and egress
+
+- The VPC spans at least two Availability Zones. The ALB uses public subnets; ECS tasks use private application subnets with no public IP; RDS uses isolated data subnets and is never publicly accessible.
+- The ALB security group accepts internet HTTPS. Port 80, if enabled, only redirects to HTTPS. The web-task security group accepts the container port only from the ALB. The worker accepts no inbound traffic. The database accepts PostgreSQL only from the web, worker, and migration task security groups.
+- The listener uses an ACM certificate in the same Region and a policy enforcing TLS 1.2 or later. A supplied certificate ARN is validated for Region and hostname compatibility. Otherwise CDK creates a DNS-validated certificate only when exact Route 53 zone ID/name and record name are provided.
+- Managed DNS creates an alias record to the ALB. If DNS is external, CDK outputs the ALB DNS name and certificate-validation records and pauses until the operator completes validation; it does not guess or modify an external provider.
+- Worker access to public event sources uses controlled NAT egress. The NAT count is an explicit cost/availability choice: one gateway lowers non-production cost but creates an AZ dependency; one per active AZ is the production availability recommendation. Egress security rules allow DNS and HTTPS plus only protocol exceptions explicitly required by a reviewed adapter.
+- Gateway/interface endpoints for S3, ECR API/DKR, CloudWatch Logs, and Secrets Manager are evaluated against NAT data volume and endpoint hourly cost. Endpoint selection is explicit rather than assumed. Private DNS is enabled for selected endpoints.
+- ALB access logs use a dedicated encrypted, public-blocked S3 bucket with finite lifecycle and `RETAIN`. AWS WAF is an optional, costed environment input rather than an undeclared baseline dependency.
+
+#### Container registry and immutable releases
+
+The Registry stack creates a private ECR repository with immutable release tags, encryption, scan-on-push or account-level enhanced scanning according to the approved scan mode, and a lifecycle policy that cannot delete the current or immediately preceding rollback image. Repository removal policy is `RETAIN`; intentional repository disposal is a separate decommission procedure.
+
+A release is built once from the exact lockfile, tested and scanned locally, tagged with the 1–128 character release identifier, authenticated to the reviewed ECR registry using the default credential chain, and pushed only after registry/action approval. The push result digest is captured from ECR and inserted into the signed deployment plan. Critical findings or an incomplete required scan block deployment. Task definitions use `<repository-uri>@sha256:<digest>`; `latest` and mutable semantic-version references are prohibited. The release manifest binds image digest, source revision, lockfile hash, migration set, tests, scans, account, and Region.
+
+Lifecycle policy retains a configured number/age of unreferenced images while release records pin current and rollback digests. The cleanup process first proves that no ECS task definition, active service, release record, or rollback record references a digest. Bootstrap's asset ECR repository remains separate from the application release repository.
+
+#### ECS web, worker, and migration tasks
+
+- Web and worker services use separate Fargate task definitions, commands, task roles, scaling policies, health behavior, and desired counts while sharing the immutable image digest.
+- The execution role is limited to ECR pulls, declared Secrets Manager reads, and declared log streams. Application task roles are separate: web receives only required application integrations; worker receives only required source/alert integrations. Neither receives broad account permissions.
+- Tasks run as the image's numeric non-root user, with read-only root filesystem where supported, bounded ephemeral storage, no privileged mode, and no host networking. ECS Exec is disabled by default and requires a separately audited break-glass decision.
+- Fastify terminates application TLS as already designed, while the ALB also enforces public TLS. The target group checks `/api/v1/health/ready`; container health uses liveness. Deregistration delay and application stop timeout allow in-flight requests to finish.
+- Both services enable the ECS deployment circuit breaker with rollback. Rolling deployment percentages, health-check grace, and CloudWatch deployment alarms are environment inputs with safe validated defaults.
+- Web scaling uses CPU, memory, and optionally ALB request count per target. Worker scaling uses queue depth/oldest-job age custom metrics. Desired/min/max values are whole numbers `1..100`; production review should normally keep at least two web tasks across AZs and at least one worker, but the design does not claim those values are approved.
+- Maximum tasks are also constrained by RDS connection capacity. Each task has a bounded pool, and synthesis rejects a configured worst-case connection total above the reviewed database allowance. RDS Proxy is not baseline infrastructure; it is a later, separately costed option if measured connection churn requires it.
+- A one-off migration task uses the same release digest with the migration command, migration credential secret, no public IP, and a dedicated task role. It is not a continuously running service and cannot be triggered by public traffic.
+
+#### RDS PostgreSQL, secrets, and stateful protection
+
+RDS runs the design's PostgreSQL major version in isolated subnets with storage encryption, TLS-required parameter settings, automated backups, point-in-time recovery, maintenance window, storage autoscaling bound, and CloudWatch alarms. Instance class, allocated/max storage, Multi-AZ, backup retention, Performance Insights, and enhanced monitoring are explicit costed inputs. Production approval requires Multi-AZ unless a documented availability exception is accepted.
+
+Stateful safeguards are defense in depth:
+
+- `DelawareScene-Data-<env>` has CloudFormation termination protection.
+- The RDS instance has deletion protection enabled.
+- RDS has `RemovalPolicy.RETAIN` and retained update-replacement behavior so stack deletion or replacement does not delete the database. Any intentional decommission first creates and verifies a named final snapshot and retained backup, then uses a separately reviewed break-glass plan to disable protections.
+- The database subnet/parameter groups are not casually renamed. Any replacement marker in the final diff blocks automatic approval.
+- Automated backups and manual pre-deployment snapshots follow environment retention policy. The existing application-level `pg_dump` manifest backup is stored in a versioned, encrypted, public-blocked S3 bucket with retention and lifecycle rules; the bucket and objects are retained on stack removal.
+- Secrets Manager stores separate migration-owner and least-privilege runtime credentials. Secrets are injected by ARN into tasks, never placed in templates, outputs, environment documents, logs, or image layers. Both secrets use `RETAIN`; intentional deletion uses the service recovery window and a separate approval.
+- Automatic credential rotation is enabled only after integration tests prove the application reload/connection behavior. Until then, rotation is an explicit runbook with staged validation; a design checkbox must not cause an outage.
+
+CloudWatch log groups are created explicitly before task definitions, encrypted under the approved key policy when a customer-managed key is selected, use finite retention appropriate to the environment, and have `RETAIN` removal policy. Retention expiration is the approved data-lifecycle mechanism; stack deletion is not. Log exports or archive buckets, if required, are separately costed.
+
+#### Observability and alarms
+
+The Compute/Service stacks define dashboards and alarms for ALB 5xx/target health/latency, ECS running-task shortfall/deployment failure/CPU/memory, RDS CPU/storage/connections/free memory/replica or failover state, job backlog, ingestion failures, source freshness, and application error rate. Alarm actions target a reviewed SNS topic or external alert integration. Missing alert configuration may be allowed in a sandbox only through an explicit waiver; it blocks production approval.
+
+Application structured logs go to distinct web, worker, and migration log groups. ECS, ALB, RDS, and application metrics are correlated through environment/release dimensions without placing high-cardinality event or user identifiers in metric labels. CloudTrail remains the account-level audit source for CDK, CloudFormation, ECR, RDS, and Secrets Manager API activity.
+
+#### Schema migration and first-deployment sequence
+
+Database migrations follow expand/contract compatibility. A release that requires a destructive or backward-incompatible migration is rejected until split into separately deployable expansion, code rollout, and later contraction releases.
+
+For an initial environment:
+
+1. deploy the reviewed Registry, Foundation, and Data stacks;
+2. build, scan, push, and resolve the immutable image digest;
+3. synthesize/diff and deploy Compute with that digest;
+4. run the one-off migration task, wait for exit code zero, and verify the schema version and backup marker;
+5. deploy Service, wait for ECS steady state and healthy ALB targets;
+6. create/activate DNS only after the service is healthy, then run public and protected smoke tests.
+
+For an update, the previous service remains active while the new Compute task definitions are registered. A verified backup/snapshot is taken when the migration risk classification requires it. The migration task succeeds before Service is updated. A failed migration stops the workflow and leaves existing services on the previous image.
+
+#### Synth, diff, approval, and deployment workflow
+
+No command combines planning and deployment without a human review boundary. The operational workflow is:
+
+1. **Release validation:** run build, tests, security scans, clean-room/coverage gates, container smoke tests, and backup/restore evidence locally.
+2. **Resolve identity:** run the default-chain preflight, display caller ARN/account/Region, and match the reviewed environment document.
+3. **Bootstrap gate:** check bootstrap version; if bootstrap/update is required, review the rendered bootstrap template and approve that mutation separately.
+4. **Synthesize:** run strict typecheck, `cdk synth --strict`, CDK assertions, `cdk-nag`, template policy checks, and normalized resource/cost manifest generation.
+5. **Accurate diff:** run `cdk diff <explicit-stacks> --method=change-set --strict` against the reviewed account/Region. A change-set diff may create temporary CloudFormation control-plane artifacts and publish assets, but it does not execute the proposed resource changes; this account interaction is disclosed in the plan.
+6. **Final review:** present additions, modifications, deletions, IAM/security changes, replacements, stateful-resource impacts, image digest, migration classification, estimated monthly cost delta, and stack order. Any RDS/secret/log/ECR deletion or replacement is a blocking item unless a separate break-glass decommission plan exists.
+7. **Seal plan:** record approver, timestamp/expiry, caller account/Region/principal, environment digest, cloud-assembly/template digests, diff digest, image digest, source revision, stack list/order, and approved migration/rollback actions. Approval is single-use and short-lived.
+8. **Reverify:** immediately before mutation, resolve identity again, re-synthesize, and compare every digest. Any drift in credentials, input, source, image, template, or diff invalidates approval and returns to step 5.
+9. **Deploy explicitly:** the guarded wrapper invokes `cdk deploy` only for the approved stacks in order. It may suppress CDK's duplicate prompt only because the wrapper has already verified the sealed approval; direct unguarded deploy is unsupported.
+10. **Migrate and verify:** run the approved migration task, deploy Service, wait for CloudFormation completion/ECS steady state, run endpoint/auth/readiness smoke tests, and confirm alarms/log delivery.
+11. **Record:** persist stack IDs, outputs, deployed image/task-definition revisions, migration result, health evidence, and costs observed after deployment.
+
+A changed diff, failed policy check, unexpected replacement, missing scan, unapproved cost increase, expired credentials, or incomplete bootstrap aborts before the corresponding mutation. CloudFormation change sets and failed deployments are inspected through stack events; no force-delete or stateful-resource import/removal is automated.
+
+#### Outputs
+
+Outputs contain identifiers, never secret values:
+
+- account, Region, environment name, stack names, and release/image digest;
+- ECR repository URI;
+- VPC and subnet IDs needed by approved operations;
+- ALB DNS name, listener ARN, target-group ARN, and public application URL when DNS is active;
+- ECS cluster ARN/name, web/worker service names, and migration task-definition ARN;
+- RDS endpoint/port/database name and secret ARNs (not secret contents);
+- log-group names, dashboard URL, alarm/SNS identifiers;
+- backup bucket name, deployment-plan digest, and CloudFormation stack IDs.
+
+RDS endpoint and infrastructure identifiers are operational data and are kept out of public application responses even though they are not passwords.
+
+#### Rollback and failure recovery
+
+ECS circuit-breaker rollback is the first response to tasks that cannot reach steady state. Manual application rollback can select only the immediately preceding release whose health record shows at least five continuous healthy minutes and whose image remains in ECR. The wrapper verifies the same account/Region and requires a fresh rollback diff and approval before changing the Service stack.
+
+Database migrations must be backward-compatible with the prior image. Rollback changes ECS task definitions and services only; it does not roll back schema or restore RDS automatically. If data restoration is required, the incident runbook stops writers, selects and verifies an approved snapshot/backup, restores into a new instance, validates manifest equality, and performs a separately reviewed cutover. CloudFormation `UPDATE_ROLLBACK_FAILED` recovery, resource import, or orphaning is a break-glass operation and never an automatic retry.
+
+A stack destroy is not a normal rollback. Stateful retained resources, secrets, logs, ECR images, snapshots, and backup buckets require an inventory and explicit decommission plan. The workflow refuses `cdk destroy` for protected environments unless a separate decision names every retained/orphaned resource and its final disposition.
+
+#### Cost-bearing resources and approval evidence
+
+The deployment plan inventories quantity, billing dimension, assumptions, and estimated monthly cost for each applicable item. Exact estimates cannot be stated until account, Region, capacity, traffic, retention, and DNS choices are known.
+
+| Resource | Primary cost drivers and review points |
+|---|---|
+| ECS Fargate | Web/worker/migration vCPU, memory, task count, duration, ephemeral storage; autoscaling maximum is included in worst-case estimate. |
+| Application Load Balancer | ALB hours and LCUs from requests, connections, bandwidth, and rule evaluations. |
+| NAT gateways/data transfer | Gateway-hours per AZ and processed bytes; compare with interface endpoints and accepted availability trade-off. |
+| RDS PostgreSQL | Instance class, Multi-AZ, storage/IO, backup/snapshot retention, monitoring, and data transfer. |
+| ECR and scanning | Stored image layers, cross-region/data transfer if any, basic/enhanced scan mode, retained rollback images. |
+| Secrets Manager | Secret count and API calls/rotation. |
+| CloudWatch | Log ingestion/storage/retention, custom metrics, dashboards, alarms, Container Insights if enabled. |
+| Route 53/ACM | Hosted-zone and DNS-query charges; public ACM certificate has no separate certificate charge but depends on ALB/DNS. |
+| S3 | ALB logs, backups, versions, requests, lifecycle/archive retrieval. |
+| VPC endpoints/KMS/SNS | Interface endpoint-hours/data, optional customer-managed key requests/month, alert delivery. |
+| CDK bootstrap | Asset S3/ECR storage and optional customization; bootstrap resources persist independently. |
+
+The final plan links an AWS Pricing Calculator estimate or equivalent reviewed worksheet and identifies every unresolved assumption. Budget and cost-anomaly alarms are recommended deployment prerequisites, but their thresholds require stakeholder input.
+
+#### Infrastructure validation
+
+Validation includes strict TypeScript compilation, deterministic synthesis for the reviewed account/Region, template snapshots/assertions, `cdk-nag`, IAM/security-group least-privilege checks, TLS policy, no-public-RDS/no-public-task assertions, route/certificate validation, explicit log groups/retention, image-digest enforcement, autoscaling/connection-capacity bounds, backup settings, and stateful removal/update-replacement/termination protections.
+
+Pre-production validation adds a real change-set diff, CloudFormation policy validation, ECR scan completion, migration-task dry run against a disposable database, and restore verification. Post-deployment checks verify stack completion, ECS steady state, target health, readiness/liveness, database TLS, migration version, secret access without disclosure, log/metric/alarm arrival, DNS/TLS behavior, and rollback-image availability. Scheduled drift detection reports, but does not automatically reconcile, out-of-band changes.
 
 ### Requirements-to-component traceability
 

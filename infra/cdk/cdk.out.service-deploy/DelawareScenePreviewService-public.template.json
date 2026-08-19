@@ -1,0 +1,1263 @@
+{
+ "Description": "Single-task ECS Fargate and CloudFront production preview for Hennovate.",
+ "Resources": {
+  "PreviewVpcE8F7AEFC": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/Resource"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet1Subnet27CA943F": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1a",
+    "CidrBlock": "10.0.0.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "PublicApplication"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/Subnet"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet1RouteTableF1ADF20B": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/RouteTable"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet1RouteTableAssociation8CE1CEDB": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet1RouteTableF1ADF20B"
+    },
+    "SubnetId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet1Subnet27CA943F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/RouteTableAssociation"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet1DefaultRouteD7250094": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "PreviewVpcIGW5195D86C"
+    },
+    "RouteTableId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet1RouteTableF1ADF20B"
+    }
+   },
+   "DependsOn": [
+    "PreviewVpcVPCGW40AE0594"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet1/DefaultRoute"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet2Subnet6D700B6A": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1b",
+    "CidrBlock": "10.0.1.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "PublicApplication"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/Subnet"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet2RouteTable9ACC61D9": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/RouteTable"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet2RouteTableAssociationFFA2EA64": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet2RouteTable9ACC61D9"
+    },
+    "SubnetId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet2Subnet6D700B6A"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/RouteTableAssociation"
+   }
+  },
+  "PreviewVpcPublicApplicationSubnet2DefaultRoute9405E9AB": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "PreviewVpcIGW5195D86C"
+    },
+    "RouteTableId": {
+     "Ref": "PreviewVpcPublicApplicationSubnet2RouteTable9ACC61D9"
+    }
+   },
+   "DependsOn": [
+    "PreviewVpcVPCGW40AE0594"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/PublicApplicationSubnet2/DefaultRoute"
+   }
+  },
+  "PreviewVpcIGW5195D86C": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "DelawareScenePreviewService-public/PreviewVpc"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/IGW"
+   }
+  },
+  "PreviewVpcVPCGW40AE0594": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "InternetGatewayId": {
+     "Ref": "PreviewVpcIGW5195D86C"
+    },
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/VPCGW"
+   }
+  },
+  "PreviewVpcRestrictDefaultSecurityGroupCustomResourceC1289FDE": {
+   "Type": "Custom::VpcRestrictDefaultSG",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E",
+      "Arn"
+     ]
+    },
+    "DefaultSecurityGroupId": {
+     "Fn::GetAtt": [
+      "PreviewVpcE8F7AEFC",
+      "DefaultSecurityGroup"
+     ]
+    },
+    "Account": "125068022861"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewVpc/RestrictDefaultSecurityGroupCustomResource/Default"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ],
+    "Policies": [
+     {
+      "PolicyName": "Inline",
+      "PolicyDocument": {
+       "Version": "2012-10-17",
+       "Statement": [
+        {
+         "Effect": "Allow",
+         "Action": [
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:RevokeSecurityGroupEgress"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:aws:ec2:us-east-1:125068022861:security-group/",
+             {
+              "Fn::GetAtt": [
+               "PreviewVpcE8F7AEFC",
+               "DefaultSecurityGroup"
+              ]
+             }
+            ]
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-125068022861-us-east-1",
+     "S3Key": "02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "__entrypoint__.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs24.x",
+    "Description": "Lambda function for removing all inbound/outbound rules from the VPC default security group"
+   },
+   "DependsOn": [
+    "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093",
+    "aws:asset:property": "Code"
+   }
+  },
+  "PreviewCluster67EEBF28": {
+   "Type": "AWS::ECS::Cluster",
+   "Properties": {
+    "ClusterSettings": [
+     {
+      "Name": "containerInsights",
+      "Value": "enabled"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewCluster/Resource"
+   }
+  },
+  "WebLogGroup68B8CF3C": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "RetentionInDays": 7,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/WebLogGroup/Resource"
+   }
+  },
+  "WebTaskDefinitionTaskRole2EE1C0E7": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/WebTaskDefinition/TaskRole/Resource"
+   }
+  },
+  "WebTaskDefinition8DF7C630": {
+   "Type": "AWS::ECS::TaskDefinition",
+   "Properties": {
+    "ContainerDefinitions": [
+     {
+      "Environment": [
+       {
+        "Name": "HOST",
+        "Value": "0.0.0.0"
+       },
+       {
+        "Name": "PORT",
+        "Value": "3000"
+       },
+       {
+        "Name": "DATA_DIRECTORY",
+        "Value": "/app/data/generated"
+       },
+       {
+        "Name": "DEMO_MODE",
+        "Value": "false"
+       },
+       {
+        "Name": "RELEASE_VERSION",
+        "Value": "prod-20260819-0700"
+       },
+       {
+        "Name": "PUBLIC_ORIGIN",
+        "Value": {
+         "Fn::Join": [
+          "",
+          [
+           "https://",
+           {
+            "Fn::GetAtt": [
+             "PreviewDistributionF5EEDAB8",
+             "DomainName"
+            ]
+           }
+          ]
+         ]
+        }
+       }
+      ],
+      "Essential": true,
+      "HealthCheck": {
+       "Command": [
+        "CMD-SHELL",
+        "node -e \"fetch('http://127.0.0.1:3000/api/v1/health/live').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""
+       ],
+       "Interval": 30,
+       "Retries": 3,
+       "StartPeriod": 20,
+       "Timeout": 5
+      },
+      "Image": {
+       "Fn::Join": [
+        "",
+        [
+         "125068022861.dkr.ecr.us-east-1.",
+         {
+          "Ref": "AWS::URLSuffix"
+         },
+         "/delaware-scene-preview-public@sha256:8b774364d5d1feeb9ec026718adc148b8fc4965e74115e3ec89c65193873436f"
+        ]
+       ]
+      },
+      "LogConfiguration": {
+       "LogDriver": "awslogs",
+       "Options": {
+        "awslogs-group": {
+         "Ref": "WebLogGroup68B8CF3C"
+        },
+        "awslogs-stream-prefix": "web",
+        "awslogs-region": "us-east-1"
+       }
+      },
+      "Name": "WebContainer",
+      "PortMappings": [
+       {
+        "ContainerPort": 3000,
+        "Protocol": "tcp"
+       }
+      ],
+      "ReadonlyRootFilesystem": true
+     }
+    ],
+    "Cpu": "256",
+    "ExecutionRoleArn": {
+     "Fn::GetAtt": [
+      "WebTaskDefinitionExecutionRole225B46C9",
+      "Arn"
+     ]
+    },
+    "Family": "DelawareScenePreviewServicepublicWebTaskDefinitionBCB768B1",
+    "Memory": "512",
+    "NetworkMode": "awsvpc",
+    "RequiresCompatibilities": [
+     "FARGATE"
+    ],
+    "RuntimePlatform": {
+     "CpuArchitecture": "X86_64",
+     "OperatingSystemFamily": "LINUX"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "TaskRoleArn": {
+     "Fn::GetAtt": [
+      "WebTaskDefinitionTaskRole2EE1C0E7",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/WebTaskDefinition/Resource"
+   }
+  },
+  "WebTaskDefinitionExecutionRole225B46C9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/WebTaskDefinition/ExecutionRole/Resource"
+   }
+  },
+  "WebTaskDefinitionExecutionRoleDefaultPolicy5D8A2D6F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:ecr:us-east-1:125068022861:repository/delaware-scene-preview-public"
+      },
+      {
+       "Action": "ecr:GetAuthorizationToken",
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "WebLogGroup68B8CF3C",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "WebTaskDefinitionExecutionRoleDefaultPolicy5D8A2D6F",
+    "Roles": [
+     {
+      "Ref": "WebTaskDefinitionExecutionRole225B46C9"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/WebTaskDefinition/ExecutionRole/DefaultPolicy/Resource"
+   }
+  },
+  "PreviewWebServiceLB8DF41985": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Scheme": "internet-facing",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "PreviewWebServiceLBSecurityGroup23B3D25C",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Ref": "PreviewVpcPublicApplicationSubnet1Subnet27CA943F"
+     },
+     {
+      "Ref": "PreviewVpcPublicApplicationSubnet2Subnet6D700B6A"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "Type": "application"
+   },
+   "DependsOn": [
+    "PreviewVpcPublicApplicationSubnet1DefaultRouteD7250094",
+    "PreviewVpcPublicApplicationSubnet1RouteTableAssociation8CE1CEDB",
+    "PreviewVpcPublicApplicationSubnet2DefaultRoute9405E9AB",
+    "PreviewVpcPublicApplicationSubnet2RouteTableAssociationFFA2EA64"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/LB/Resource"
+   }
+  },
+  "PreviewWebServiceLBSecurityGroup23B3D25C": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB DelawareScenePreviewServicepublicPreviewWebServiceLBF57AE1D7",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/LB/SecurityGroup/Resource"
+   }
+  },
+  "PreviewWebServiceLBSecurityGrouptoDelawareScenePreviewServicepublicPreviewWebServiceSecurityGroupBC83314F3000428D31E8": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "Description": "Load balancer to target",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "PreviewWebServiceSecurityGroupF5512BF5",
+      "GroupId"
+     ]
+    },
+    "FromPort": 3000,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "PreviewWebServiceLBSecurityGroup23B3D25C",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "ToPort": 3000
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/LB/SecurityGroup/to DelawareScenePreviewServicepublicPreviewWebServiceSecurityGroupBC83314F:3000"
+   }
+  },
+  "PreviewWebServiceLBPublicListenerD950142A": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "PreviewWebServiceLBPublicListenerECSGroup0DD737FA"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "PreviewWebServiceLB8DF41985"
+    },
+    "Port": 80,
+    "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/LB/PublicListener/Resource"
+   }
+  },
+  "PreviewWebServiceLBPublicListenerECSGroup0DD737FA": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "HealthCheckIntervalSeconds": 30,
+    "HealthCheckPath": "/api/v1/health/ready",
+    "HealthCheckTimeoutSeconds": 5,
+    "Matcher": {
+     "HttpCode": "200"
+    },
+    "Port": 80,
+    "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "TargetType": "ip",
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/LB/PublicListener/ECSGroup/Resource"
+   }
+  },
+  "PreviewWebService1A189B32": {
+   "Type": "AWS::ECS::Service",
+   "Properties": {
+    "Cluster": {
+     "Ref": "PreviewCluster67EEBF28"
+    },
+    "DeploymentConfiguration": {
+     "Alarms": {
+      "AlarmNames": [],
+      "Enable": false,
+      "Rollback": false
+     },
+     "DeploymentCircuitBreaker": {
+      "Enable": true,
+      "Rollback": true
+     },
+     "MaximumPercent": 200,
+     "MinimumHealthyPercent": 100
+    },
+    "DeploymentController": {
+     "Type": "ECS"
+    },
+    "DesiredCount": 1,
+    "EnableECSManagedTags": false,
+    "HealthCheckGracePeriodSeconds": 90,
+    "LaunchType": "FARGATE",
+    "LoadBalancers": [
+     {
+      "ContainerName": "WebContainer",
+      "ContainerPort": 3000,
+      "TargetGroupArn": {
+       "Ref": "PreviewWebServiceLBPublicListenerECSGroup0DD737FA"
+      }
+     }
+    ],
+    "NetworkConfiguration": {
+     "AwsvpcConfiguration": {
+      "AssignPublicIp": "ENABLED",
+      "SecurityGroups": [
+       {
+        "Fn::GetAtt": [
+         "PreviewWebServiceSecurityGroupF5512BF5",
+         "GroupId"
+        ]
+       }
+      ],
+      "Subnets": [
+       {
+        "Ref": "PreviewVpcPublicApplicationSubnet1Subnet27CA943F"
+       },
+       {
+        "Ref": "PreviewVpcPublicApplicationSubnet2Subnet6D700B6A"
+       }
+      ]
+     }
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "TaskDefinition": {
+     "Ref": "WebTaskDefinition8DF7C630"
+    }
+   },
+   "DependsOn": [
+    "PreviewWebServiceLBPublicListenerECSGroup0DD737FA",
+    "PreviewWebServiceLBPublicListenerD950142A",
+    "WebTaskDefinitionTaskRole2EE1C0E7"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/Service/Service"
+   }
+  },
+  "PreviewWebServiceSecurityGroupF5512BF5": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "DelawareScenePreviewService-public/PreviewWebService/Service/SecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ],
+    "VpcId": {
+     "Ref": "PreviewVpcE8F7AEFC"
+    }
+   },
+   "DependsOn": [
+    "WebTaskDefinitionTaskRole2EE1C0E7"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/Service/SecurityGroup/Resource"
+   }
+  },
+  "PreviewWebServiceSecurityGroupfromDelawareScenePreviewServicepublicPreviewWebServiceLBSecurityGroupB5DCB6DE3000056C1151": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "Load balancer to target",
+    "FromPort": 3000,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "PreviewWebServiceSecurityGroupF5512BF5",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "PreviewWebServiceLBSecurityGroup23B3D25C",
+      "GroupId"
+     ]
+    },
+    "ToPort": 3000
+   },
+   "DependsOn": [
+    "WebTaskDefinitionTaskRole2EE1C0E7"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewWebService/Service/SecurityGroup/from DelawareScenePreviewServicepublicPreviewWebServiceLBSecurityGroupB5DCB6DE:3000"
+   }
+  },
+  "PreviewDistributionF5EEDAB8": {
+   "Type": "AWS::CloudFront::Distribution",
+   "Properties": {
+    "DistributionConfig": {
+     "Comment": "Hennovate public production preview",
+     "DefaultCacheBehavior": {
+      "AllowedMethods": [
+       "GET",
+       "HEAD",
+       "OPTIONS",
+       "PUT",
+       "PATCH",
+       "POST",
+       "DELETE"
+      ],
+      "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+      "CachedMethods": [
+       "GET",
+       "HEAD",
+       "OPTIONS"
+      ],
+      "Compress": true,
+      "OriginRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
+      "TargetOriginId": "DelawareScenePreviewServicepublicPreviewDistributionOrigin1413A6ED0",
+      "ViewerProtocolPolicy": "redirect-to-https"
+     },
+     "Enabled": true,
+     "HttpVersion": "http2",
+     "IPV6Enabled": true,
+     "Origins": [
+      {
+       "ConnectionTimeout": 10,
+       "CustomOriginConfig": {
+        "OriginProtocolPolicy": "http-only",
+        "OriginReadTimeout": 60,
+        "OriginSSLProtocols": [
+         "TLSv1.2"
+        ]
+       },
+       "DomainName": {
+        "Fn::GetAtt": [
+         "PreviewWebServiceLB8DF41985",
+         "DNSName"
+        ]
+       },
+       "Id": "DelawareScenePreviewServicepublicPreviewDistributionOrigin1413A6ED0"
+      }
+     ],
+     "PriceClass": "PriceClass_100"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "Hennovate"
+     },
+     {
+      "Key": "DeploymentTier",
+      "Value": "production-preview"
+     },
+     {
+      "Key": "Environment",
+      "Value": "public"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "AWS-CDK"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/PreviewDistribution/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31Q0W7bMAz8lr4ramdsA/qYpltRoMACu+hrQcuMx0YRDZFKEBj+98F2nBhd2yfeHY/Q6TKb/fxhb67gIAtXbReeStsWCm5r4CCvLbrMti+NM6tNeFmvzDqVnlyRyoDaaxeUc1J8htLjRb9oSxF2BEoczuYePAbFGFAfQPEAx9MzJ7ZUBfd3h0FNgS5F0uND5NQMD3wp/KojivwnP4ZB7ww6se3KJ1GMvWuCvyHW0EeW7T1uKNAU+L3CQYECxpl2ui0w7smNJYywM55rse0T1+e0E+4Mwc62OY+1DXPNntxQxYj6uNHm2LCQcjzegWD/g9cGtG9P7LJpPLmh3SeG6g48BIfVu0ToQZScZ6jKwUGh3me2/fg6jjFnfO4jUQwnz4Rn+2eINer5tzPaGec5VZvIQW17T6KRyjTVPOddZ3IUTrEvM4ny7kI34ZPVOvKeKoxDR0sR1EKhplD3N3+SNkk7E7hC+ybX++y7/XZrb67ehGgRU1Daoc3H+Q/4ZQyNGgMAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DelawareScenePreviewService-public/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "PreviewWebServiceLoadBalancerDNS2E3B459D": {
+   "Value": {
+    "Fn::GetAtt": [
+     "PreviewWebServiceLB8DF41985",
+     "DNSName"
+    ]
+   }
+  },
+  "PreviewWebServiceServiceURL2AB8D470": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "http://",
+      {
+       "Fn::GetAtt": [
+        "PreviewWebServiceLB8DF41985",
+        "DNSName"
+       ]
+      }
+     ]
+    ]
+   }
+  },
+  "WebsiteUrl": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Fn::GetAtt": [
+        "PreviewDistributionF5EEDAB8",
+        "DomainName"
+       ]
+      }
+     ]
+    ]
+   }
+  },
+  "LoadBalancerDnsName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "PreviewWebServiceLB8DF41985",
+     "DNSName"
+    ]
+   }
+  },
+  "ClusterName": {
+   "Value": {
+    "Ref": "PreviewCluster67EEBF28"
+   }
+  },
+  "ServiceName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "PreviewWebService1A189B32",
+     "Name"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

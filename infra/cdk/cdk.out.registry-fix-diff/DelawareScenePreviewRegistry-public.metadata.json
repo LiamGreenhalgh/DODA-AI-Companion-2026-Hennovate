@@ -1,0 +1,272 @@
+{
+  "/DelawareScenePreviewRegistry-public": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:stack-tags",
+      "data": [
+        {
+          "key": "Application",
+          "value": "Hennovate"
+        },
+        {
+          "key": "DeploymentTier",
+          "value": "production-preview"
+        },
+        {
+          "key": "Environment",
+          "value": "public"
+        },
+        {
+          "key": "ManagedBy",
+          "value": "AWS-CDK"
+        }
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/RepositoryUri": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RepositoryUri"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:80:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/SourceBucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SourceBucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:81:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/SourceObjectKey": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SourceObjectKey"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:82:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/BuildProjectName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildProjectName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:83:5)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/PreviewRepository/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PreviewRepositoryD0542DBA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Repository2 in .pnpm...",
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:17:24)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/BuildSourceBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildSourceBucketB61842F6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in .pnpm...",
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:27:26)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/ContainerBuildProject/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerBuildProject6810EECB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Project2 in .pnpm...",
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:36:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...App.synth in .pnpm...",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:33:5)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/BuildSourceBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildSourceBucketPolicyB3CE9B83"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in .pnpm...",
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:27:26)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/BuildSourceBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BuildSourceBucketAutoDeleteObjectsCustomResource98384CFD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/ContainerBuildProject/Role/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerBuildProjectRole023CB502"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Project2 in .pnpm...",
+        "new RegistryStack (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\src\\registry-stack.ts:36:21)",
+        "<anonymous> (C:\\Users\\Liamg\\Hennovate\\infra\\cdk\\bin\\app.ts:13:7)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/DelawareScenePreviewRegistry-public/ContainerBuildProject/Role/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContainerBuildProjectRoleDefaultPolicy745D65FB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "....pnpm...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
